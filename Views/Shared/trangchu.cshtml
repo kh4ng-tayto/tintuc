@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Mycss/trangchu.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div id="top-bar">
+            <div class="top-bar-left">
+            </div>
+            <div class="top-bar-right">
+            </div>
+        </div>
+        <div id="main-header">
+            <div class="header-upper">
+                <a href="#" class="nav-item">TÒA SOẠN</a>
+                <a href="#" class="nav-item">QUẢNG CÁO</a>
+                <span class="hotline">HOTLINE: 094.5359.676 - </span>
+                <a href="#" class="link-partner">
+                    <div class="partner-logos">
+                        <i class="fa-brands fa-facebook" title="Facebook"></i>
+                        <i class="fa-brands fa-youtube" title="Youtube"></i>
+                        <img src="~/hình/zalo.jpg" alt="Zalo" title="Zalo" class="zalo" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="header-main-content">
+            <div class="logo">
+                <a href="#">
+                    <img src="~/hình/tiên phong.png" alt="Tiền Phong" style="height:60px;width:400px" />
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="datetime">Thứ Năm, 12/06/2025, 20:51:08 GMT+7</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> HOA HẬU VIỆT NAM 2024</a>
+            <span class="separator">|</span>
+            <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> CHỐNG TIN GIẢ, TIN XẤU</a>
+        </div>
+        <nav id="main-menu">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i></a></li>
+                <li><a href="#">Xã hội</a></li>
+                <li><a href="#">Kinh tế</a></li>
+                <li><a href="#">Sống xanh</a></li>
+                <li><a href="#">Địa ốc</a></li>
+                <li><a href="#">Sức khỏe</a></li>
+                <li><a href="#">Thế giới</a></li>
+                <li><a href="#">Giới trẻ</a></li>
+                <li><a href="#">Pháp luật</a></li>
+                <li><a href="#">Thể thao</a></li>
+                <li><a href="#">Người lính</a></li>
+                <li><a href="#">Xe</a></li>
+                <li><a href="#">Văn hóa</a></li>
+                <li><a href="#">Giải trí</a></li>
+                <li><a href="#">Giáo dục</a></li>
+                <li><a href="#">Khoa học</a></li>
+                <li><a href="#">Hoa hậu</a></li>
+                <li><a href="#">Bạn đọc</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#"><i class="fa fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

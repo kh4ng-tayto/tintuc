@@ -1,0 +1,65 @@
+﻿body {
+}
+
+.zalo {
+    width: 20px;
+}
+#top-bar {
+    background-color: #f0f0f0; /* Light grey */
+    height: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 0.8em;
+    color: #555;
+}
+#main-header {
+    width:100%;
+    height:50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff; 
+}
+.header-upper .nav-item {
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size:15px;
+    font-weight:bold;
+}
+.header-upper .nav-item:hover {
+    color: #c00;
+}
+.hotline {
+    font-weight: bold;
+    color: #000;
+    margin-right:20px;
+    font-size: 15px;
+}
+.partner-logos {
+    display: flex;
+    align-items: center;
+}
+.header-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color:brown; 
+    color: #fff;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+logo img {
+    height: 60px; 
+    margin-right:15px;
+}
+
