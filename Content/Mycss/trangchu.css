@@ -1,35 +1,104 @@
 ﻿body {
+     
 }
-
+header {
+    /* KHÔNG đặt position: fixed/absolute ở đây trừ khi bạn muốn header cố định khi cuộn */
+    /* Nếu bạn muốn cố định, xem phần lưu ý bên dưới */
+    width: 100%; /* Đảm bảo header chiếm toàn bộ chiều rộng */
+    /* background-color: #f0f0f0;  Màu nền chung cho header nếu cần */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Giữ bóng đổ của bạn */
+    /* Để header tự động tính chiều cao, KHÔNG đặt height cố định cho #main-header */
+}
 .zalo {
     width: 20px;
 }
 #top-bar {
-    background-color: #f0f0f0; /* Light grey */
-    height: 20px; /* Adjust as needed */
+    background-color: #f0f0f0;
+    height: 30px; /* Tăng nhẹ chiều cao để chứa nội dung và padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 15px; /* Thêm padding hai bên */
     font-size: 0.8em;
     color: #555;
+    /* Dùng font-size nhỏ cho các mục trên top-bar */
+    line-height: 30px; /* Căn giữa text theo chiều dọc */
 }
 #main-header {
     width:100%;
-    height:50px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    
 }
 .header-upper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: #fff; 
+     display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 10px 15px; 
+    
 }
+
+.header-upper-left {
+    display: flex;
+    align-items: center;
+    gap:15px;   
+}
+.header-upper-left .nav-item {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        margin-right:0; /* Khoảng cách giữa TÒA SOẠN và QUẢNG CÁO */    
+        padding: 0px 10px;
+ }
+    .header-upper-left .nav-item:hover {
+        color: #e44d26; /* Màu khi hover, ví dụ màu cam */
+    }
+
+    .header-upper-left .hotline {
+        font-size: 14px;
+        color: #333;
+        font-weight: bold;
+    }
+
+.header-upper-right {
+    display: flex;
+    align-items: center;
+    gap:15px;
+    
+}
+    .header-upper-right .link-partner {
+        display: flex; /* Dùng flex để căn chỉnh các icon trong cùng một link */
+        align-items: center;
+        text-decoration: none;
+    }
+    .header-upper-right .partner-logo {
+        height: 25px; /* Điều chỉnh chiều cao của logo đối tác */
+        margin-right: 15px; /* Khoảng cách giữa các logo */
+        vertical-align: middle; /* Căn chỉnh theo chiều dọc */
+    }
+
+    /* Kích thước và khoảng cách cho icon YouTube và Facebook */
+    .header-upper-right .social-icon {
+        height: 20px; 
+        width: 20px;
+        margin-left: 5px; /* Khoảng cách giữa các icon mạng xã hội */
+        vertical-align: middle;
+    }
+    .header-upper-right .link-partner:not(:last-child) {
+        border-right: 1px solid #ccc; /* Đường kẻ phân cách */
+        padding-right: 10px;
+    }
+
+    .header-upper-right .link-partner:last-child {
+        padding-right: 0;
+        border-right: none;
+    }
+
 .header-upper .nav-item {
     color: #333;
     text-decoration: none;
-    margin-right: 15px;
+    margin-left:15px;
     font-size:15px;
     font-weight:bold;
 }
@@ -39,27 +108,310 @@
 .hotline {
     font-weight: bold;
     color: #000;
-    margin-right:20px;
-    font-size: 15px;
+    font-size:15px;
+
 }
 .partner-logos {
     display: flex;
-    align-items: center;
+    align-items:center;
+    
 }
 .header-main-content {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color:brown; 
+    background-color:red; 
     color: #fff;
 }
-.logo {
+
+
+.header-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    position:relative;
+}
+.datetime {
+    font-size: 0.9em;
+    margin-bottom:5px;
+}
+.search-bar {
+    display: flex;
+    align-items:center;
+    border: 1px solid #eee; /* Đường viền bao quanh toàn bộ khối */
+    border-radius: 3px;
+    overflow: hidden; /* Giúp các góc bo tròn hoạt động tốt */
+    background-color: white; /* Đảm bảo nền là màu trắng */
+    height:38px;
+}
+    .search-bar input {
+        border: none;
+        padding: 8px 10px;
+        font-size: 0.9em;
+        outline: none;
+        color: #333;
+        flex-grow: 1;
+        height: 100%;
+        padding-right: 30px;
+        box-sizing: border-box;
+    }
+    .search-bar a{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-decoration:none;
+        padding:0 10px;
+        color:black;
+        height:100%;
+        flex-shrink:0;
+        padding-right:40px;
+    }
+    .search-bar .search-icon{
+    font-size:15px;
+    }
+    .search-bar .search-icon:hover{
+        color:red;
+    }
+    .search-bar:hover{
+        color:green;
+    }
+
+
+
+.header-bottom {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    position:relative;
+    top:20px; 
 }
-logo img {
-    height: 60px; 
-    margin-right:15px;
+.header-bottom .bottom-nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+        
+ }
+.bottom-nav-item .fa {
+    margin-right:5px;
+    color:yellow;
 }
+.header-bottom .separator {
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px;
+}
+#main-menu {
+    background-color: aqua;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 0 20px; 
+}
+#thanhmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+#thanhmenu li {
+   margin:0;
+   padding:0;
+}
+
+    #thanhmenu li a {
+        display: block;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        white-space: nowrap;
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 0.95em;
+    }
+    #thanhmenu li.dropdown {
+        position: relative;
+    }
+        /* 2. Style và ẩn SUBMENU */
+        #thanhmenu li.dropdown .submenu {
+            display: none; /* Mặc định ẩn submenu */
+            position: absolute; /* Quan trọng: Định vị tuyệt đối so với LI cha */
+            background-color: #a00; /* Màu nền đỏ đậm của submenu */
+            min-width: 200px; /* Chiều rộng tối thiểu cho submenu */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Đổ bóng cho submenu */
+            z-index: 100; /* Đảm bảo submenu nằm trên cùng các nội dung khác */
+            top: 100%; /* Đặt submenu ngay dưới LI cha */
+            left: 0; /* Căn lề trái của submenu với LI cha */
+            list-style: none; /* Bỏ dấu chấm đầu dòng */
+            padding: 0;
+            margin: 0;
+            border-top: 2px solid #fff; /* Đường kẻ trắng ở trên cùng submenu */
+        }
+
+            /* 3. Style cho các mục con trong SUBMENU */
+            #thanhmenu li.dropdown .submenu li {
+                /* Không cần position: relative ở đây */
+                margin: 0;
+                padding: 0;
+            }
+
+                #thanhmenu li.dropdown .submenu li a {
+                    color: white; /* Màu chữ trắng cho các mục con */
+                    padding: 12px 16px; /* Padding cho mỗi mục con */
+                    text-decoration: none;
+                    display: block; /* Đảm bảo mỗi link chiếm toàn bộ chiều rộng */
+                    text-align: left; /* Căn lề trái */
+                    font-weight: normal; /* Không in đậm các mục con */
+                    font-size: 0.95em; /* Kích thước font cho các mục con */
+                    white-space: nowrap; /* Ngăn chữ xuống dòng */
+                }
+
+        /* 4. Hiệu ứng HOVER: HIỂN THỊ SUBMENU */
+        #thanhmenu li.dropdown:hover .submenu {
+            display: block; /* Khi di chuột vào LI cha, hiển thị submenu */
+        }
+
+        /* 5. (Tùy chọn) Style cho mục cha khi có dropdown */
+        /* Khi di chuột vào "Kinh tế", nó vẫn nên có hiệu ứng hover */
+        #thanhmenu li.dropdown > a:hover {
+            background-color: #c00; /* Màu nền khi hover cho mục cha */
+            color: white; /* Màu chữ khi hover cho mục cha */
+        }
+
+#main-menu li a:hover {
+    background-color: black;
+    color: red;
+}
+#main-menu li .fa-home,
+#main-menu li .fa-bars {
+    font-size: 1.2em; 
+}
+.link-partner .social-icon {
+    width:30px;
+    height:20px;
+}
+.footer{
+    background-color:whitesmoke;
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:850px;
+    margin:0 auto;
+    padding:10px 20px;
+    border-bottom:1px solid #ddd;
+    margin-bottom:20px;
+}
+.footer-top-content{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.footer-nav-item {
+    color:#555;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+            white-space: nowrap; /* Ngăn không cho chữ bị xuống dòng */
+        }
+.footer-hotline
+.footer-email {
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+    white-space: nowrap; /* Ngăn không cho chữ bị xuống dòng */
+}
+.footer-hotline {
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+    white-space: nowrap; /* Ngăn không cho chữ bị xuống dòng */
+    font-weight: bold;
+}
+.footer-nav-item:hover {
+    color: #e44d26; /* Màu khi hover */
+}
+.scroll-to-top {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #555;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.scroll-to-top:hover{
+    background-color:green;
+    color:rebeccapurple;
+    border-color:forestgreen;
+}
+.scroll-to-top .fa-chevron-up {
+    font-size: 1em; /* Kích thước icon mũi tên */
+}
+.footer-main-content{
+    display:flex;
+    justify-content:space-between;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 15px 30px;
+    flex-wrap:wrap;
+}
+.footer-section{
+    flex:1;
+    min-width:300px;
+    margin-right:20px;
+}
+.footer-section:last-child{
+    margin-right:0;
+}
+    .footer-section p {
+        margin: 5px 0; /* Khoảng cách giữa các dòng text */
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6; /* Giãn dòng cho dễ đọc */
+    }
+
+        .footer-section p a {
+            color: #666;
+            text-decoration: none;
+        }
+
+            .footer-section p a:hover {
+                text-decoration: underline;
+            }
+
+    .footer-section b {
+        font-weight: bold;
+        color: #333;
+    }
+
+.epht-logo {
+    display: inline-block;
+    background-color: #333; /* Màu nền cho chữ ePHT */
+    color: white;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+
 

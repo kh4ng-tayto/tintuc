@@ -8,78 +8,229 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div id="top-bar">
-            <div class="top-bar-left">
-            </div>
-            <div class="top-bar-right">
-            </div>
-        </div>
-        <div id="main-header">
-            <div class="header-upper">
-                <a href="#" class="nav-item">TÒA SOẠN</a>
-                <a href="#" class="nav-item">QUẢNG CÁO</a>
-                <span class="hotline">HOTLINE: 094.5359.676 - </span>
-                <a href="#" class="link-partner">
-                    <div class="partner-logos">
-                        <i class="fa-brands fa-facebook" title="Facebook"></i>
-                        <i class="fa-brands fa-youtube" title="Youtube"></i>
-                        <img src="~/hình/zalo.jpg" alt="Zalo" title="Zalo" class="zalo" />
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="header-main-content">
-            <div class="logo">
-                <a href="#">
-                    <img src="~/hình/tiên phong.png" alt="Tiền Phong" style="height:60px;width:400px" />
-                </a>
-            </div>
-            <div class="header-right">
-                <div class="datetime">Thứ Năm, 12/06/2025, 20:51:08 GMT+7</div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Nhập từ khóa tìm kiếm">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
+       <header>
+            <div id="top-bar">
+                <div class="top-bar-left">
+                </div>
+                <div class="top-bar-right">
                 </div>
             </div>
-        </div>
+            <div id="main-header">
+                <div class="header-upper">
+                    <div class="header-upper-left">
+                        <a href="#" class="nav-item">TÒA SOẠN</a>
+                        <a href="#" class="nav-item">QUẢNG CÁO</a>
+                        <span class="hotline">HOTLINE: 0865.010.115 - 0977.456.112</span>
+                    </div>
+                    <div class="header-upper-right">
+                        <a href="#" class="link-partner"><img src="~/hình/Banner.png" alt="Tiền Phong" class="partner-logo"></a>
+                        <a href="#" class="link-partner"><img src="~/hình/Banner.png" alt="Sinh Viên Việt" class="partner-logo"></a>
+                        <a href="#" class="link-partner"><img src="~/hình/Banner.png" alt="Hoa Học Trò" class="partner-logo"></a>
+                        <a href="#" class="link-partner"><img src="~/hình/Banner.png" alt="Nông Nghiệp Việt Nam" class="partner-logo"></a>
+                        <a href="https://www.youtube.com/" class="link-partner" target="_blank">
+                            <img src="~/hình/youtube.png" alt="Youtube" title="Youtube" class="social-icon">
+                        </a>
+                        <a href="https://www.facebook.com/" class="link-partner" target="_blank">
+                            <img src="~/hình/face.png" alt="Facebook" title="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://chat.zalo.me/" class="link-partner" target="_blank">
+                            <img src="~/hình/zalo.jpg" alt="Zalo" title="Zalo" class="social-icon" />
+                        </a>
+                    </div>
+                </div>
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="~/hình/tiên phong.png" alt="Tiền Phong" style="height:60px;width:400px" />
+                        </a>
+                    </div>
+                    <div class="header-bottom">
+                        <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> HOA HẬU VIỆT NAM 2024</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> CHỐNG TIN GIẢ, TIN XẤU</a>
+                    </div>
+                    <div class="header-right">
+                        <div class="datetime">Thứ Năm, 12/06/2025, 20:51:08 GMT+7</div>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+                            <a href="https://tienphong.vn/"><i class="fa fa-search search-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="thanhmenu">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="#" title="Trang chủ"><i class="fa fa-home"></i></a></li>
+                            <li class="dropdown"><a href="#" title="Xã hội">Xã hội</a>
+                               <ul class="submenu">
+                                   <li><a href="#" title="Chính trị">Chính trị</a></li>
+                                   <li><a href="#" title="Tin tức">Tin tức</a></li>
+                                   <li><a href="#" title="Phóng sự">Phóng sự</a></li>
+                               </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Kinh tế">Kinh tế</a>
+                              <ul class="submenu">
+                                     <li><a href="#" title="Thị trường">Thị trường</a></li>
+                                     <li><a href="#" title="Doanh nghiệp">Doanh nghiệp</a></li>
+                                     <li><a href="#" title="Đầu tư">Đầu tư</a></li>
+                                     <li><a href="#" title="Tài chính">Tài chính - chứng khoán</a></li>
+                                     <li><a href="#" title="Giảm nghèo bền vững">Giảm nghèo bền vững</a></li>
+                               </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Sóng xanh">Sóng xanh</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Xanh 4.0">Xanh 4.0</a></li>
+                                                     <li><a href="#" title="Life-style">life-style</a></li>
+                                                     <li><a href="#" title="Đầu tư">Đầu tư</a></li>
+                                                     <li><a href="#" title="Net zero">Net zero</a></li>
+                                                     <li><a href="#" title="Di chuyển xanh">Di chuyển xanh</a></li>
+                                                     
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Địa ốc">Địa ốc</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Đô thị- Dự án">Đô thị - Dự án</a></li>
+                                                     <li><a href="#" title="Thị trường - Doanh nghiệp">Thị trường - Doanh nghiệp</a></li>
+                                                     <li><a href="#" title="Nhà đẹp - Kiến trúc">Nhà đẹp - Kiến trúc</a></li>
+                                                     <li><a href="#" title="Chuyên gia - Tư vấn">Chuyên gia - Tư vấn</a></li>
+                                                     <li><a href="#" title="Media Địa ốc">Media Địa ốc</a></li>
 
-        <div class="header-bottom">
-            <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> HOA HẬU VIỆT NAM 2024</a>
-            <span class="separator">|</span>
-            <a href="#" class="bottom-nav-item star"><i class="fa fa-star"></i> CHỐNG TIN GIẢ, TIN XẤU</a>
-        </div>
-        <nav id="main-menu">
-            <ul>
-                <li><a href="#"><i class="fa fa-home"></i></a></li>
-                <li><a href="#">Xã hội</a></li>
-                <li><a href="#">Kinh tế</a></li>
-                <li><a href="#">Sống xanh</a></li>
-                <li><a href="#">Địa ốc</a></li>
-                <li><a href="#">Sức khỏe</a></li>
-                <li><a href="#">Thế giới</a></li>
-                <li><a href="#">Giới trẻ</a></li>
-                <li><a href="#">Pháp luật</a></li>
-                <li><a href="#">Thể thao</a></li>
-                <li><a href="#">Người lính</a></li>
-                <li><a href="#">Xe</a></li>
-                <li><a href="#">Văn hóa</a></li>
-                <li><a href="#">Giải trí</a></li>
-                <li><a href="#">Giáo dục</a></li>
-                <li><a href="#">Khoa học</a></li>
-                <li><a href="#">Hoa hậu</a></li>
-                <li><a href="#">Bạn đọc</a></li>
-                <li><a href="#">Video</a></li>
-                <li><a href="#"><i class="fa fa-bars"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+                                                 </ul></li>
+                            <li class="dropdown"><a href="#" title="Sức khỏe">Sức khỏe</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Y khoa">Y khoa</a></li>
+                                                     <li><a href="#" title="Thuốc tốt">Thuốc tốt</a></li>
+                                                     <li><a href="#" title="Khỏe đẹp">Khỏe đẹp</a></li>
+                                                     <li><a href="#" title="Giới tính">Giới tính</a></li>
+                                                     <li><a href="#" title="Mẹ và bé">Mẹ và bé</a></li>
+                                                     <li><a href="#" title="Phòng chống ung thư">Phòng chống ung thư</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Thế giới">Thế giới</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Phân tích - Bình luận">Phân tích - Bình luận</a></li>
+                                                     <li><a href="#" title="Chuyện lạ">Chuyện lạ</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Giới trẻ">Giới trẻ</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Nhịp sống">Nhịp sống</a></li>
+                                                     <li><a href="#" title="Cộng đồng mạng">Cộng đồng mạng</a></li>
+                                                     <li><a href="#" title="Tài năng trẻ">Tài năng trẻ</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Pháp luật">Pháp luật</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Bản tin 113">Bản tin 113</a></li>
+                                                     <li><a href="#" title="Pháp đình">Pháp đình</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Thể thao">Thể thao</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Bóng đá">Bóng đá</a></li>
+                                                     <li><a href="#" title="Hậu trường thể thao">Hậu trường thể thao</a></li>
+                                                     <li><a href="#" title="Golf">Golf</a></li>
+                                                 </ul>
+                            </li>
+                            <li><a href="#" title="Người lính">Người lính</a></li>
+                            <li class="dropdown"><a href="#" title="Xe">Xe</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Thị trường xe">Thị trường xe</a></li>
+                                                     <li><a href="#" title="Đánh giá xe">Đánh giá xe</a></li>
+                                                     <li><a href="#" title="Cộng đồng">Cộng đồng xe</a></li>
+                                                     <li><a href="#" title="Tư vấn">Tư Vấn</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Văn hóa">Văn hóa</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Tin văn hóa">Tin văn hóa</a></li>
+                                                     <li><a href="#" title="Câu chuyện văn hóa">Câu chuyện văn hóa</a></li>
+                                                     <li><a href="#" title="Sách">Sách</a></li>
+                                                     <li><a href="#" title="Sổ bụi">Sổ bụi</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Giải trí">Giải trí</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Sao">Sao</a></li>
+                                                     <li><a href="#" title="Hậu trường sao">Hậu trường sao</a></li>
+                                                     <li><a href="#" title="Video">Video</a></li>
+                                                     <li><a href="#" title="Đẹp">Đẹp</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Giáo dục">Giáo dục</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Cổng trường">Cổng trường</a></li>
+                                                     <li><a href="#" title="Tuyển sinh">Tuyển sinh</a></li>
+                                                     <li><a href="#" title="Du học">Du học</a></li>
+                                                 </ul>
+                            </li>
+                            <li><a href="#" title="Khoa học">Khoa học</a></li>
+                            <li class="dropdown"><a href="#" title="Hoa hậu">Hoa hậu</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Tin tức">Tin tức</a></li>
+                                                     <li><a href="#" title="Ảnh">Ảnh</a></li>
+                                                     <li><a href="#" title="Video">Video</a></li>
+                                                     <li><a href="#" title="Hậu trường hoa hậu">Hậu trường hoa hậu</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Bạn đọc">Bạn đọc</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Điều tra">Điều tra</a></li>
+                                                     <li><a href="#" title="Diễn đàn">Diễn đàn</a></li>
+                                                     <li><a href="#" title="Hồi âm">Hồi âm</a></li>
+                                                     <li><a href="#" title="Nhân ái">Nhân ái</a></li>
+                                                 </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" title="Video">Video</a>
+                                                 <ul class="submenu">
+                                                     <li><a href="#" title="Thời sự">Thời sự</a></li>
+                                                     <li><a href="#" title="Showbiz-TV">Showbiz-TV</a></li>
+                                                     <li><a href="#" title="Thời tiết">Thời tiết</a></li>
+                                                     <li><a href="#" title="Thể thao">Thể thao</a></li>
+                                                     <li><a href="#" title="Quân sự">Quân sự</a></li>
+                                                     <li><a href="#" title="Mutex">Mutex</a></li>
+                                                 </ul>
+                            </li>
+                            <li><a href="#" title="Menu"><i class="fa fa-bars"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-    
-    <div>
+            </div>
+        </header>
+    <div style="height:500px;background-color:yellow">
         @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-top-content">
+                <a href="#" class="footer-nav-item">TÒA SOẠN</a>
+                <a href="#" class="footer-nav-item">QUẢNG CÁO</a>
+                <a href="#" class="footer-nav-item">BẮT BẢO</a>
+                <span class="footer-hotline">HOTLINE QUẢNG CÁO : 0945359676</span>
+                <span class="footer-email">EMAIL:levi31120005@gmail.com</span>
+            </div>
+            <a href="#" class="scroll-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+        <div class="footer-main-content">
+            <div class="footer-section copyright">
+                <p>&copy;Bản quyền điện tử Tiền Phong</p>
+                <p><b>Tổng biên tập: Lê Tấn Khang</b></p>
+                <p>Tòa soạn:15 Hồ Xuân Hương, Hà Nội - Điện thoại: 094.53359.676</p>
+                <p>Email:<a href="levi31120005@gmail.com">Email nhận báo</a></p>
+            </div>
+            <div class="footer-section info">
+                <p>Giấy phép số 76/GP-BTTTT, cấp ngày 26/02/2020.</p>
+                <p>Cơ quan chủ quản: Trung ương Đoàn TNCS Hồ Chí Minh</p>
+                <p>Cấm sao chép dưới mọi hình thức, nếu không có sự chấp thuận bằng văn bản</p>
+                <a href="#" class="dmca">
+                    <p>
+                        Powered by e-PHT Technologie<img src="~/hình/dmca-badge-w100-5x1-05.png" />
+                    </p>
+                </a>
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>

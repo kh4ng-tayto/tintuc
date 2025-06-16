@@ -148,7 +148,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="hình\Banner.png" />
+    <Content Include="hình\Chuong-trinh-khuyet-mai-YHL-07-05-den-20-05-Desktop.jpg" />
+    <Content Include="hình\dmca-badge-w100-5x1-05.png" />
+    <Content Include="hình\face.png" />
     <Content Include="hình\tiên phong.png" />
+    <Content Include="hình\youtube.png" />
     <Content Include="hình\zalo.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -183,6 +188,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\trangchu.cshtml" />
     <Content Include="Views\trangchu\trangchu.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\trangchu\thethao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

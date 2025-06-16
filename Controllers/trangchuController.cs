@@ -13,5 +13,9 @@ namespace Vnexpress.Controllers
         {
             return View();
         }
+        public ActionResult thethao()
+        {
+            return View();
+        }
     }
 }

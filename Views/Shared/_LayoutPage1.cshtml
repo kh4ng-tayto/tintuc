@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .datetime {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            margin: 30px 0;
+            gap: 30px;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            flex: 3;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(120deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-content h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Categories */
+        .categories {
+            flex: 1;
+        }
+
+        .category-box {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .category-box h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .category-box ul {
+            list-style: none;
+        }
+
+        .category-box ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-box ul li:last-child {
+            border-bottom: none;
+        }
+
+        .category-box ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .category-box ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        
+        
+</style>
+<body>
+    <header>
+        <div class="container">
+            <div class="top-bar">
+                <div class="logo">BÁO <span>MỚI</span></div>
+                <div class="datetime">Thứ Sáu, 13/06/2025 | 19:15:37 GMT+7</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Xã hội</a></li>
+                <li><a href="#">Kinh tế</a></li>
+                <li><a href="#">Sống xanh</a></li>
+                <li><a href="#">Địa ốc</a></li>
+                <li><a href="#">Startup</a></li>
+                <li><a href="#">Thế giới</a></li>
+                <li><a href="#">Giới trẻ</a></li>
+                <li><a href="#">Pháp luật</a></li>
+                <li><a href="#">Thể thao</a></li>
+                <li><a href="#">Người lính</a></li>
+                <li><a href="#">Xe</a></li>
+                <li><a href="#">Văn hóa</a></li>
+                <li><a href="#">Giải trí</a></li>
+                <li><a href="#">Giáo dục</a></li>
+                <li><a href="#">Khoa học</a></li>
+                <li><a href="#">Hoa hậu</a></li>
+                <li><a href="#">Bạn đọc</a></li>
+                <li><a href="#">Video</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Featured Article -->
+            <div class="featured-article">
+                <div class="featured-image">GIẤC MƠ XANH VÀ ĐIỂM NÓNG TRUNG BỘ</div>
+                <div class="article-content">
+                    <h1>CƠ QUAN TRUNG ƯƠNG CỦA ĐOÀN TNCS HỒ CHÍ MINH</h1>
+                    <p>Trong không khí sôi nổi của tuổi trẻ cả nước hướng tới kỷ niệm 50 năm ngày giải phóng miền Nam, thống nhất đất nước, Đoàn TNCS Hồ Chí Minh đã phát động chương trình "Giấc mơ xanh" với mục tiêu trồng mới 10 triệu cây xanh tại các tỉnh miền Trung.</p>
+                    <p>Dự án tập trung vào các khu vực thường xuyên chịu ảnh hưởng của thiên tai, biến đổi khí hậu, nhằm tạo ra vành đai xanh bảo vệ môi trường sống cho người dân. Chương trình đã nhận được sự hưởng ứng nhiệt tình từ các cấp bộ Đoàn trên toàn quốc.</p>
+                    <div class="article-meta">
+                        <div>Phóng viên: Nguyễn Văn A</div>
+                        <div>Lượt xem: 12.345</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories">
+                <div class="category-box">
+                    <h2>CHUYÊN MỤC NỔI BẬT</h2>
+                    <ul>
+                        <li><a href="#">Tin mới nhất</a></li>
+                        <li><a href="#">Tin nóng trong ngày</a></li>
+                        <li><a href="#">Phân tích chuyên sâu</a></li>
+                        <li><a href="#">Bình luận</a></li>
+                        <li><a href="#">Phỏng vấn độc quyền</a></li>
+                        <li><a href="#">Góc nhìn đa chiều</a></li>
+                        <li><a href="#">Infographic</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-box">
+                    <h2>TIN ĐỌC NHIỀU</h2>
+                    <ul>
+                        <li><a href="#">Đề án phát triển kinh tế miền Trung 2025-2030</a></li>
+                        <li><a href="#">Giá xăng dầu giảm mạnh trong tuần</a></li>
+                        <li><a href="#">Hướng dẫn mới về thi tốt nghiệp THPT</a></li>
+                        <li><a href="#">Đội tuyển Việt Nam chuẩn bị cho vòng loại World Cup</a></li>
+                        <li><a href="#">Lễ hội hoa anh đào tại Đà Lạt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VỀ CHÚNG TÔI</h3>
+                    <p>Báo Mới - Cơ quan ngôn luận của Đoàn TNCS Hồ Chí Minh</p>
+                    <p>Giấy phép số: 123/GP-BTTTT</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>LIÊN HỆ</h3>
+                    <p>Địa chỉ: 62 Bà Triệu, Hà Nội</p>
+                    <p>Email: info@baomoi.vn</p>
+                    <p>Hotline: 1900 1234</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>THEO DÕI CHÚNG TÔI</h3>
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>Youtube</p>
+                    <p>Zalo</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2025 Báo Mới. Tất cả quyền được bảo lưu.
+            </div>
+        </div>
+    </footer>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
