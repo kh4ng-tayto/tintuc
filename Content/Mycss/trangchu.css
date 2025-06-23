@@ -401,17 +401,21 @@ header {
         font-weight: bold;
         color: #333;
     }
-
-.epht-logo {
-    display: inline-block;
-    background-color: #333; /* Màu nền cho chữ ePHT */
-    color: white;
-    padding: 2px 5px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-left: 5px;
-    vertical-align: middle;
+.dmca p{
+    color:black;
 }
+.dmca p:hover{
+    color:red;
+}
+.dmca{
+    text-decoration:none;
+    display:flex;
+    
+}
+
+
+
+
 
 
 
