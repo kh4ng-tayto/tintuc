@@ -263,6 +263,96 @@
     color: #0056b3;
     text-decoration:none;
 }
+.Menu {
+    max-width: 1600px;
+    margin: 20px auto 0; /* Khoảng cách trên, căn giữa, không có margin dưới để nó sát với main-news-section */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Giữ bóng giống các phần khác */
+    border-radius: 8px; /* Giữ bo góc */
+    overflow: hidden; /* Đảm bảo các đường kẻ không tràn ra ngoài */
+    padding: 0 20px; /* Thêm padding ngang để nội dung không dính sát viền */
+}
+
+.danhsach {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:flex-start; /* Căn các mục về phía trái */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ chỗ */
+    margin-bottom:5px;
+}
+.category-item {
+    margin-right: 35px; /* Khoảng cách giữa các mục menu. Điều chỉnh nếu cần. */
+}
+    .category-item:last-child {
+        margin-right: 0; /* Loại bỏ margin-right cho mục cuối cùng */
+    }
+    .category-item a {
+        text-decoration: none;
+        color: #333; /* Màu chữ mặc định là đen/xám đậm */
+        font-size: 0.95em;
+        font-weight: bold; /* Chữ có vẻ đậm */
+        padding: 5px 0; /* Padding trên dưới cho link để dễ click */
+        display: block; /* Để padding và hover hoạt động tốt */
+        transition: color 0.2s ease-in-out;
+    }
+        .category-item a:hover {
+            color: #e62117; /* Màu đỏ khi hover */
+        }
+
+    .category-item.active a {
+        color: #e62117; /* Màu đỏ cho mục active */
+        
+    }
+.top-line {
+    height: 10px; /* Độ dày của đường kẻ */
+    background-color: #e0e0e0; /* Màu của đường kẻ */
+    margin: 0; /* Đảm bảo không có margin mặc định */
+    margin-bottom:20px; /* Khoảng cách giữa đường kẻ trên và menu */
+    background-color: #ccc; /* Đường kẻ trên có vẻ hơi đậm hơn */
+}
+
+.bottom-line {
+    margin-top: 20px; /* Khoảng cách giữa menu và đường kẻ dưới */
+    background-color: #ccc; /* Đường kẻ dưới có vẻ hơi đậm hơn */
+    height: 2px; /* Độ dày của đường kẻ */
+    background-color: #e0e0e0; /* Màu của đường kẻ */
+    margin: 0; /* Đảm bảo không có margin mặc định */
+}
+
+  .container2 {
+    max-width: 1600px; /* Cùng width với .container để căn chỉnh */
+    margin: 40px auto; /* Khoảng cách trên dưới và căn giữa */
+    padding: 0px;
+    background-color: #fff; /* Nền trắng */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Đổ bóng */
+    word-wrap: break-word
+}
+
+@media (max-width: 992px) { /* Cho màn hình trung bình, 3 cột */
+    .article-card {
+        flex: 0 0 calc(33.333% - 10px); /* (33.333% * gap_value / 2) - 2 khoảng gap */
+        max-width: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 768px) { /* Cho màn hình tablet, 2 cột */
+    .article-card {
+        flex: 0 0 calc(50% - 7.5px); /* (50% * gap_value / 1) */
+        max-width: calc(50% - 7.5px);
+    }
+}
+
+@media (max-width: 600px) { /* Cho màn hình điện thoại, 1 cột */
+    .article-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        /* padding: 0 10px; Có thể thêm padding cho card trên mobile để không dính sát viền */
+    }
+}
        
 
 
