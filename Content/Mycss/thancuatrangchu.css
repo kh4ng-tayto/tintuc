@@ -1,359 +1,461 @@
-﻿body {
+﻿body{
+
 }
-.link-font-chu{
-    text-decoration:none;
-    color:black;
-}
-.link-font-chu :hover{
-    color:red;
-}
-.container{
-    display:flex;   
-    max-width:1600px;
-    margin:20px auto;
-    background-color:#fff;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    border-radius:8px;
-    overflow:hidden;
-}
-.main-content{
-    flex:2;
-    padding:20px;
-    border-right:1px solid #eee;
-}
-.hero-section{
-    margin-bottom:20px;
-}
-.main-article-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 5px;
-    display: block;
-    margin-bottom: 15px;
-}
-.headline-box h3{
-    font-size:25px;
-    margin-top:5px;
-    line-height:1,2;
-}
-.article-boy{
-    line-height:1,,6;
-}
-.article-boy p {
-    margin-bottom:20px;
-}
-.article-boy ul {
-    list-style-type: disc;
-    list-style:circle;
-    margin-left: 20px;
-    padding:0;
-}
-.article-boy ul li {
-    margin-bottom: 0.5em;
-}
-.article-boy a:hover{
-    color:red;
-}
-.sidebar {
-    
-    flex: 1;
+.container {
+    display: flex; /* Dùng Flexbox để chia layout */
+    gap: 20px; /* Khoảng cách giữa main-content và sidebar */
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa container */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     padding: 20px;
-    background-color: #f9f9f9;
 }
-.social-widget {
-   
-    margin-bottom: 30px;
-    padding: 15px;
+.baochinh {
+    flex: 2;
     border-radius: 8px;
     overflow: hidden;
+  
 }
-    .social-widget .cover-image { 
-        width:300px;
-        height: 180px;
-        margin-bottom: 10px;
-        object-fit: cover; /* Đảm bảo ảnh được cắt cho vừa vặn mà không bị biến dạng */
-        display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+.baophu {
+    width:350px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.main-article {
+    position: relative;
+}
+    .main-article .hinhchinh {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
-    .social-widget .profile-logo {
-        display: flex; /* Dùng flexbox để căn hàng logo và text */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        padding: 10px 15px; /* Padding xung quanh logo và text info */
-        margin-top: -170px; /* Di chuyển lên để logo chồng lên ảnh bìa */
-        position: relative; /* Đặt position để z-index hoạt động */
-        z-index: 1; /* Đảm bảo logo nằm trên ảnh bìa */
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.icon{
+    width:50px;
+}
+.time {
+    color:#999;
+}
+.view {
+    color: #999;
+}
+.sidebar-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    transition: transform 0.2s;
+}
+sidebar-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.sidebar-item .hinhphu {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.sidebar-content {
+     flex: 1;
+ }
+.sidebar-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+    .sidebar-title:hover {
+        color: blue;
     }
-    .social-widget .profile-logo {
-        width:40px; /* Kích thước logo */
-        border-radius: 80%; /*làm thành hình tròn*/
-        box-shadow: 10px 10px 15px #4267B2; /* Đổ bóng */
-        margin-right: 15px; /* Khoảng cách giữa logo và text */
-        flex-shrink: 0; /* Ngăn logo bị co lại */
+    .sidebar-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
     }
-    .social-widget .text-info {
-        flex-grow: 1; /* Cho phép text info chiếm phần không gian còn lại */
-        text-align: left; /* Căn trái text trong khu vực này */
+ .sidebar-view {
+    color:gray;
+}
+.tinlienquan {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    
+}
+.bacot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    margin-left:-20px;
+}
+.themoi {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+    .themoi .hinh3cot {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .themoi:hover {
+        transform: translateY(-2px);
+    }
+.noidung {
+    padding: 10px 0;
+}
+.tieude {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.news-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+.danhsachmoi{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-left:-28px;
+}
+.danhsach {
+    display: flex;
+    gap: 12px;
+    transition: background-color 0.2s;
+    padding: 10px;
+    border-radius: 6px;
+}
+.danhsachhinh {
+    width:120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.noidungdanhsach{
+    flex:1;
+}
+.tieudedanhsach {
+    font-size:20px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.news-list-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+.danhsachhinh:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+}
+
+.news-brands {
+    /* Đảm bảo news-brands không tràn ra ngoài */
+    width: 340px; /* Chiều rộng 100% của phần tử cha (.baophu) */
+    overflow: hidden; /* Quan trọng: Che giấu phần nội dung tràn */
+    white-space: nowrap; /* Ngăn các logo xuống dòng */
+    margin-bottom: 55px;
+    padding: 10px 0;
+    /* Loại bỏ padding-left: 15px nếu bạn muốn văn bản "ĐỐI TÁC CHÍNH THỨC" thẳng hàng với viền */
+}
+    .news-brands span {
+        font-weight: bold;
         color: #333;
+        margin-bottom:10px;
+        padding-left: 15px; /* Giữ padding này nếu bạn muốn chữ thụt vào */
+        display: block; /* Đảm bảo span là một khối riêng */
     }
-    .text-info a{
-        text-decoration:none;
-        color:black;
+.brand-container {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của news-brands */
+    overflow: hidden; /* Rất quan trọng: Che giấu phần animation tràn */
+    position: relative;
+    height: 40px; /* Chiều cao cho vùng chạy logo */
+    box-sizing: border-box; /* Đảm bảo padding/border không làm tăng kích thước */
+    
+}
+.brand-logos {
+    display: inline-flex; /* Quan trọng: Giúp tất cả logo nằm trên một hàng */
+    animation: scrollLogos 20s linear infinite;
+    /* Bỏ padding-left: 100%; ở đây. Chúng ta sẽ điều khiển nó bằng transform */
+}
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 40px;
+    margin-right:20px; /* Khoảng cách giữa các logo */
+    flex-shrink: 0; /* Ngăn logo bị co lại */
+    /* Để các logo có cùng kích thước hình ảnh và có màu sắc như ảnh của bạn */
+    filter: none; /* Bỏ grayscale nếu bạn muốn ảnh có màu */
+    opacity: 1; /* Bỏ opacity nếu bạn muốn ảnh rõ nét */
+    padding: 5px 12px;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+    .brand-logo img {
+        height: 70px; /* Hình ảnh chiếm 100% chiều cao của .brand-logo */
+        width: 70px; /* Chiều rộng tự động để giữ tỉ lệ */
+        object-fit: contain; /* Đảm bảo toàn bộ logo vừa vặn */
+        /* Với hình ảnh bạn cung cấp, các logo có vẻ đã có màu sắc của chúng. */
+        /* Nếu bạn dùng ảnh grayscale và muốn hover mới có màu, thì giữ lại phần filter & opacity */
+       
     }
 
-.social-widget .page-name {
-    font-size: 14px; /* Kích thước tên trang */
-    font-weight: bold;
-    margin: 6px; /* Loại bỏ margin mặc định */
-    display: flex; /* Dùng flex để căn chỉnh dấu tích xanh */
+/* Giữ nguyên animation @keyframes */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0%); /* Bắt đầu animation từ vị trí 0 của dải logo */
+    }
+
+    100% {
+        /* Dịch chuyển sang trái một đoạn bằng 50% chiều rộng của .brand-logos */
+        /* hoặc 100% chiều rộng của bộ logo ban đầu. */
+        /* Nếu bạn nhân đôi logo, thì 50% của tổng chiều rộng của `.brand-logos` hiện tại */
+        /* sẽ tương đương với 100% chiều rộng của bộ logo gốc. */
+        transform: translateX(-50%);
+    }
+}
+.brand-logos:hover {
+    animation-play-state: paused;
+}
+.thongtinchinhphu {
+    border: 1px solid #e0e0e0; /* Đường viền tinh tế xung quanh toàn bộ phần */
+    border-radius: 8px; /* Các góc được bo tròn nhẹ cho toàn bộ hộp */
+    overflow: hidden; /* Đảm bảo nội dung bên trong không bị tràn ra ngoài */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Tùy chọn: bóng mờ */
+    width:350px;
+}
+.gov-header {
+    display: flex;
     align-items: center;
-   
-}
-.social-widget .page-name:hover {
-    text-decoration:underline;
-}
-.social-widget .verified-badge {
-    color: #4267B2; /* Màu xanh của dấu tích */
-    font-size: 20px; /* Kích thước dấu tích */
-    margin-left: 5px; /* Khoảng cách giữa tên và dấu tích */
-}
-.social-widget .followers {
-    font-size: 0.9em;
-    color: #606770; /* Màu chữ followers */
-    margin: 5px 0 0; /* Loại bỏ margin mặc định và thêm margin top */
-  font-weight:bold;
-}
-.social-widget .actions {
-    padding: 15px;
-    display: flex; /* Dùng flexbox cho các nút */
-    justify-content: space-between; /* Căn đều khoảng cách giữa các nút */
-    gap: 20px; /* Khoảng cách giữa các nút */
-    border-top: 1px solid #eee; /* Đường kẻ trên các nút */
-    padding-top:-20px;
-}
-.social-widget button {
-    padding: 2px 2px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 15px;
+    color: #333; /* Darker text color */
     font-weight: bold;
-    font-size: 0.9em;
-    display: flex; /* Dùng flexbox để căn icon và text trong nút */
+    text-transform: uppercase;
+    font-size: 1.1em;
+    position: relative; /* For the red line */
+    padding-bottom: 15px; /* Space for the red line */
+    background-color: #fff; /* Ensure white background for the header */
+    margin-left: 20px;
+    
+    
+}
+
+.gov-icon {
+    /* No background-image here anymore as it's an <img> tag */
+    width: 30px; /* Điều chỉnh kích thước vùng chứa biểu tượng của bạn */
+    height: 30px;
+    display: flex; /* Sử dụng flex để căn giữa hình ảnh bên trong */
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
+    gap: 50px;
 }
-    .social-widget button i {
-        margin-right: 5px; /* Khoảng cách giữa icon và text trong nút */
+
+    .gov-icon .iconchinhphu { /* Targeting the image specifically */
+        width: 100%; 
+        height: 100%;
+        object-fit: contain;
+        display: block; /* Xóa khoảng trắng thừa bên dưới hình ảnh */
     }
-.social-widget .facebook-button-follow {
-    background-color: #4267B2; /* Màu xanh Facebook */
-    color: #fff;
-    border: 1px solid #ccc;
-}
-
-    .social-widget .facebook-button-follow:hover {
-        background-color:red;
-    }
-
-.social-widget .share-button {
-    background-color: #f0f2f5; /* Màu xám nhạt */
-    color: #333;
-    border: 1px solid #ccc;
-}
-
-    .social-widget .share-button:hover {
-        background-color: #e4e6eb;
-    }
-    
-    .sidebar-articles {
-    max-height: 650px;
-    overflow-y:auto;
-    padding-right:10px; /* <--- Tùy chọn: Thêm padding để nội dung không bị dính vào thanh cuộn */
-    /* background-color: #f0f0f0;  <-- Tùy chọn: Để dễ nhìn vùng cuộn */
-}
-.sidebar-articles-item{
-    padding-top:10px;
-    padding-bottom:10px;
-    border-bottom:1px solid black;
-    margin-bottom:0;
-    line-height:1.4
-}
-
-.sidebar-articles h4 {
-    font-size: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: black;
-    cursor: pointer;
-    line-height: 1.4;
-    padding-bottom: 10px;
-}
-
-.sidebar-articles::-webkit-scrollbar {
-        width: 2px; /* Chiều rộng của thanh cuộn */
-}
-.sidebar-articles::-webkit-scrollbar-track {
-        background: #f1f1f1; /* Màu nền của track (đường ray) */
-        border-radius: 10px;
-}
-.sidebar-articles::-webkit-scrollbar-thumb {
-        background: #808080; /* Màu của "cục" cuộn */
-        border-radius: 10px;
-}
-
-.container1 {
-    max-width: 1600px; /* Cùng width với .container để căn chỉnh */
-    margin: 40px auto; /* Khoảng cách trên dưới và căn giữa */
-    padding: 0px;
-    background-color: #fff; /* Nền trắng */
-    border-radius: 8px; /* Bo góc */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Đổ bóng */
-    word-wrap: break-word
-}
-.related-thebaibao {
-    display: flex;
-    justify-content:space-between;
-    gap:15px;
-    flex-wrap: wrap;
-}
-.thebaibao {
-    flex: 0 0 calc(25% - 11.25px); /* Cho 4 cột, 3 khoảng gap 15px = 45px, chia đều cho 4 cột */
-    max-width: calc(25% - 11.25px);
-    min-width: 180px; /* Có thể giảm min-width một chút nếu muốn thẻ nhỏ hơn */
-    text-align: center;
-    background-color: #fcfcfc;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-}
-
-.link {
-    text-decoration: none;
-    font-size: 1.2em;
+.gov-title {
+    flex-grow: 1;
+    font-size: 1.2em; /* Make title slightly larger */
     font-weight: bold;
     color: #333;
+}
+.gov-content {
+   margin-top:20px;
+    background-color: #f9f9f9; /* Light grey background for the content area */
+}
+.gov-article {
     display: flex;
-    flex-direction:column;
-    align-items: center;
+    gap: 15px;
+    align-items: flex-start; /* Căn chỉnh hình ảnh và văn bản ở trên cùng */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
-.thebaibao:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.thebaibao a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-}
-.thebaibao .card-image {
-    width:100%;
+    
+.hinh {
+    width: 80px; /* Fixed width for the image */
+    height: 80px; /* Fixed height for the image */
     object-fit: cover;
-    display:block;
-    margin-bottom: 10px;
+    border-radius: 4px; /* Slightly rounded corners for the image */
+    flex-shrink: 0; /* Ngăn hình ảnh bị thu nhỏ nếu văn bản dài */
+    margin-left:20px;
 }
-.thebaibao.card-title {
-    font-size: 0.95em;
-    font-weight: normal;
-    padding: 0 10px 10px;
-    margin: 0;
-    line-height: 1.3;
+.gov-article-content {
+    flex: 1; /* Cho phép nội dung chiếm không gian còn lại */
 }
-
-.thebaibao a:hover .card-title {
-    color: #0056b3;
-    text-decoration:none;
+.gov-article-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.4;
+    text-decoration: none; 
 }
-.Menu {
-    max-width: 1600px;
-    margin: 20px auto 0; /* Khoảng cách trên, căn giữa, không có margin dưới để nó sát với main-news-section */
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Giữ bóng giống các phần khác */
-    border-radius: 8px; /* Giữ bo góc */
-    overflow: hidden; /* Đảm bảo các đường kẻ không tràn ra ngoài */
-    padding: 0 20px; /* Thêm padding ngang để nội dung không dính sát viền */
+    .gov-article-title:hover {
+        color: #007bff; 
+    }
+.gov-list {
+    list-style:square;
 }
-
-.danhsach {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nangluong-section{
+    margin-top:30px;
+    margin-left:-20px;
+}
+.nangluong-header {
+    color: #ff6b35;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-left:3px solid #ff6b35;
+    
+}
+.nangluong-list {
     display: flex;
-    justify-content:flex-start; /* Căn các mục về phía trái */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ chỗ */
-    margin-bottom:5px;
+    flex-direction: column;
+    gap: 15px;
+    margin-left:-20px;
 }
-.category-item {
-    margin-right: 35px; /* Khoảng cách giữa các mục menu. Điều chỉnh nếu cần. */
+.nangluong-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-    .category-item:last-child {
-        margin-right: 0; /* Loại bỏ margin-right cho mục cuối cùng */
+    .nangluong-image:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-    .category-item a {
+
+.nangluong-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+.nangluong-content {
+    flex: 1;
+}
+.nangluong-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+    .nangluong-title:hover {
+        color: #ff6b35;
+    }
+
+.nangluong-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+}
+.xem-tat-ca {
+    text-align: center;
+    margin-top: 20px;
+}
+    .xem-tat-ca a {
+        display: inline-block;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        color: white;
         text-decoration: none;
-        color: #333; /* Màu chữ mặc định là đen/xám đậm */
-        font-size: 0.95em;
-        font-weight: bold; /* Chữ có vẻ đậm */
-        padding: 5px 0; /* Padding trên dưới cho link để dễ click */
-        display: block; /* Để padding và hover hoạt động tốt */
-        transition: color 0.2s ease-in-out;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
     }
-        .category-item a:hover {
-            color: #e62117; /* Màu đỏ khi hover */
+
+        .xem-tat-ca a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
         }
 
-    .category-item.active a {
-        color: #e62117; /* Màu đỏ cho mục active */
-        
-    }
-.top-line {
-    height: 10px; /* Độ dày của đường kẻ */
-    background-color: #e0e0e0; /* Màu của đường kẻ */
-    margin: 0; /* Đảm bảo không có margin mặc định */
-    margin-bottom:20px; /* Khoảng cách giữa đường kẻ trên và menu */
-    background-color: #ccc; /* Đường kẻ trên có vẻ hơi đậm hơn */
+
+
+
+
+
+
+
+
+
+
+
+
+.link .tieudedanhsach:hover {
+    color: blue;
+}
+.link .view:hover{
+    color:blue;
+}
+.link .sidebar-view:hover {
+    color: blue;
 }
 
-.bottom-line {
-    margin-top: 20px; /* Khoảng cách giữa menu và đường kẻ dưới */
-    background-color: #ccc; /* Đường kẻ dưới có vẻ hơi đậm hơn */
-    height: 2px; /* Độ dày của đường kẻ */
-    background-color: #e0e0e0; /* Màu của đường kẻ */
-    margin: 0; /* Đảm bảo không có margin mặc định */
+.link{
+    text-decoration:none;
 }
 
-  .container2 {
-    max-width: 1600px; /* Cùng width với .container để căn chỉnh */
-    margin: 40px auto; /* Khoảng cách trên dưới và căn giữa */
-    padding: 0px;
-    background-color: #fff; /* Nền trắng */
-    border-radius: 8px; /* Bo góc */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Đổ bóng */
-    word-wrap: break-word
-}
 
-@media (max-width: 992px) { /* Cho màn hình trung bình, 3 cột */
-    .article-card {
-        flex: 0 0 calc(33.333% - 10px); /* (33.333% * gap_value / 2) - 2 khoảng gap */
-        max-width: calc(33.333% - 10px);
-    }
-}
 
-@media (max-width: 768px) { /* Cho màn hình tablet, 2 cột */
-    .article-card {
-        flex: 0 0 calc(50% - 7.5px); /* (50% * gap_value / 1) */
-        max-width: calc(50% - 7.5px);
-    }
-}
 
-@media (max-width: 600px) { /* Cho màn hình điện thoại, 1 cột */
-    .article-card {
-        flex: 0 0 100%;
-        max-width: 100%;
-        /* padding: 0 10px; Có thể thêm padding cho card trên mobile để không dính sát viền */
-    }
-}
-       
+
+
+
+
+
 
 
 
