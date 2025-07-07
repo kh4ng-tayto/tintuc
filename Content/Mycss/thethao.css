@@ -1,0 +1,382 @@
+﻿body {
+}
+
+.container {
+    display: flex; /* Dùng Flexbox để chia layout */
+    gap: 20px; /* Khoảng cách giữa main-content và sidebar */
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa container */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.baochinh {
+    width:55%;
+    border-radius: 8px;
+    overflow: hidden;
+     
+}
+.tieude-header{
+    margin-bottom:40px;
+}
+
+.baophu {
+    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-article {
+    position: relative;
+}
+
+    .main-article .hinhchinh {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: all 0.2s ease;
+    }
+
+.hinhchinh:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.main-article:hover .article-title {
+    color: blue;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 50px;
+}
+
+.time {
+    color: #999;
+}
+
+.view {
+    color: #999;
+}
+
+.sidebar-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    transition: transform 0.2s;
+}
+
+    .sidebar-item:hover .sidebar-title {
+        color: blue;
+    }
+
+.hinhphu:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
+.sidebar-item .hinhphu {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.sidebar-content {
+    flex: 1;
+}
+
+.sidebar-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.sidebar-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.tinlienquan {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.bacot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+.themoi {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .themoi .hinh3cot {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: all 0.2s ease;
+    }
+
+.hinh3cot:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
+.noidung {
+    padding: 10px 0;
+}
+
+.tieude {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.news-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.themoi:hover .tieude {
+    color: blue;
+}
+
+.danhsachmoi {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: -28px;
+}
+
+.danhsach {
+    display: flex;
+    gap: 12px;
+    transition: background-color 0.2s;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.danhsachhinh {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+    .danhsachhinh:hover {
+        transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+    }
+
+.danhsach:hover .tieudedanhsach {
+    color: blue;
+}
+
+.noidungdanhsach {
+    flex: 1;
+}
+
+.tieudedanhsach {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.news-list-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+
+
+
+
+.nong24h-section {
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+.nong24h-header {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+    .nong24h-header h2 {
+        color: #ff4500; /* Màu cam đậm cho tiêu đề */
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    .nong24h-header .hr-custom {
+        border: none;
+        border-top: 3px solid #ff4500;
+        margin: 0;
+        height: 0;
+        margin-bottom: -10px;
+    }
+
+.hr-250 {
+    width: 200px;
+}
+
+.nong24h-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nong24h-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+    .nong24h-item:hover .nong24h-title {
+        color: blue;
+    }
+
+
+
+.nong24h-image {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+    .nong24h-image:hover {
+        transform: scale(1.05);
+    }
+
+.nong24h-content {
+    flex: 1;
+}
+
+.nong24h-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+
+.nong24h-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #888;
+}
+.tieude-header {
+    margin-bottom: 40px;
+}
+
+.tieude-link {
+    text-decoration: none;
+}
+
+.thethao {
+    color: #00aaff; /* Màu xanh giống trong ảnh */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.bongda {
+    color: #666; /* Màu xám giống trong ảnh */
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px; /* Khoảng cách nhỏ giữa "THỂ THAO" và ">" */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.link .view:hover {
+    color: blue;
+}
+
+
+.link {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

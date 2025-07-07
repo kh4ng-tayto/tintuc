@@ -31,13 +31,21 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        transition: all 0.2s ease;
     }
+.hinhchinh:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
 .article-title {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
     line-height: 1.4;
+
+}
+.main-article:hover .article-title{
+    color:blue;
 }
 .article-meta {
     display: flex;
@@ -66,9 +74,11 @@
     padding: 12px;
     transition: transform 0.2s;
 }
-sidebar-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+.sidebar-item:hover .sidebar-title {
+    color:blue;
+}
+.hinhphu:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
 }
 .sidebar-item .hinhphu {
     width: 80px;
@@ -76,6 +86,7 @@ sidebar-item:hover {
     object-fit: cover;
     border-radius: 4px;
     flex-shrink: 0;
+    transition: all 0.2s ease;
 }
 .sidebar-content {
      flex: 1;
@@ -88,18 +99,13 @@ sidebar-item:hover {
     margin-bottom: 5px;
     overflow: hidden;
 }
-    .sidebar-title:hover {
-        color: blue;
-    }
     .sidebar-meta {
         display: flex;
         align-items: center;
         gap: 10px;
         font-size: 12px;
     }
- .sidebar-view {
-    color:gray;
-}
+ 
 .tinlienquan {
     padding: 20px;
     border-top: 1px solid #eee;
@@ -115,22 +121,23 @@ sidebar-item:hover {
 .themoi {
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s;
-    cursor: pointer;
 }
     .themoi .hinh3cot {
         width: 100%;
         height: auto;
         object-fit: cover;
+        transition: all 0.2s ease;
+        
     }
-    .themoi:hover {
-        transform: translateY(-2px);
-    }
+.hinh3cot:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
 .noidung {
     padding: 10px 0;
 }
 .tieude {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
     line-height: 1.3;
@@ -142,6 +149,10 @@ sidebar-item:hover {
     align-items: center;
     gap: 10px;
     font-size: 12px;
+    
+}
+.themoi:hover .tieude{
+    color:blue;
 }
 .danhsachmoi{
     display:flex;
@@ -157,12 +168,20 @@ sidebar-item:hover {
     border-radius: 6px;
 }
 .danhsachhinh {
-    width:120px;
+    width: 120px;
     height: auto;
     object-fit: cover;
     border-radius: 4px;
     flex-shrink: 0;
+    transition: all 0.3s ease;
 }
+    .danhsachhinh:hover {
+        transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+    }
+.danhsach:hover .tieudedanhsach{
+    color:blue;
+}
+
 .noidungdanhsach{
     flex:1;
 }
@@ -179,10 +198,6 @@ sidebar-item:hover {
     align-items: center;
     gap: 10px;
     font-size: 15px;
-}
-.danhsachhinh:hover {
-    transform: translateY(-2px);
-    transition: transform 0.2s;
 }
 
 .news-brands {
@@ -275,8 +290,7 @@ sidebar-item:hover {
     padding-bottom: 15px; /* Space for the red line */
     background-color: #fff; /* Ensure white background for the header */
     margin-left: 20px;
-    
-    
+    margin-bottom:0;
 }
 
 .gov-icon {
@@ -314,34 +328,53 @@ sidebar-item:hover {
     padding-bottom: 15px;
     border-bottom: 1px solid #eee;
 }
-    
+
 .hinh {
     width: 80px; /* Fixed width for the image */
     height: 80px; /* Fixed height for the image */
     object-fit: cover;
     border-radius: 4px; /* Slightly rounded corners for the image */
     flex-shrink: 0; /* Ngăn hình ảnh bị thu nhỏ nếu văn bản dài */
-    margin-left:20px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
 }
+.hinh:hover{
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
 .gov-article-content {
     flex: 1; /* Cho phép nội dung chiếm không gian còn lại */
 }
-.gov-article-title {
+.gov-article-title .link{
     font-weight: bold;
-    color: #333;
-    font-size: 1em;
+    color: black;
+    font-size: 20px;
     line-height: 1.4;
     text-decoration: none; 
 }
-    .gov-article-title:hover {
-        color: #007bff; 
-    }
+  
 .gov-list {
     list-style:square;
 }
-.nangluong-section{
-    margin-top:30px;
-    margin-left:-20px;
+.title .link{
+    color:black;
+}
+.duongkedotted {
+    width: 90%;
+    border: none;
+    border-top: 2px dotted #ccc;
+    height: 0;
+}
+.duongkedoday {
+    border: none;
+    border-top: 5px solid #d32f2f;
+    height: 0;
+    margin-top: 0px; /* Giảm khoảng cách phía trên */
+    margin-bottom: 40px; /* Giữ nguyên khoảng cách phía dưới */
+}
+.nangluong-section {
+    margin-top: 30px;
+    margin-left: -20px;
 }
 .nangluong-header {
     color: #ff6b35;
@@ -368,19 +401,19 @@ sidebar-item:hover {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-    .nangluong-image:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+.nangluong-image:hover {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
 
 .nangluong-image {
-    width: 80px;
-    height: 60px;
+    width: 120px;
+    height: auto;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 4px;
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
+
 .nangluong-content {
     flex: 1;
 }
@@ -392,9 +425,9 @@ sidebar-item:hover {
     margin-bottom: 8px;
     overflow: hidden;
 }
-    .nangluong-title:hover {
-        color: #ff6b35;
-    }
+.nangluong-item:hover .nangluong-title{
+    color:blue;
+}
 
 .nangluong-meta {
     display: flex;
@@ -403,8 +436,9 @@ sidebar-item:hover {
     color: #666;
 }
 .xem-tat-ca {
-    text-align: center;
-    margin-top: 20px;
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:30px;
 }
     .xem-tat-ca a {
         display: inline-block;
@@ -422,27 +456,463 @@ sidebar-item:hover {
             box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.link .tieudedanhsach:hover {
-    color: blue;
+.khampha-section {
+    margin-top:30px;
+    margin-left: -20px;
 }
+
+.khampha-header {
+    color: #ff6b35;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-left: 3px solid #ff6b35;
+}
+
+.khampha-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left:-20px;
+}
+
+.khampha-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.khampha-item:hover .khampha-title{
+    color:blue;
+} 
+
+.khampha-image:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.khampha-image {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius:4px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.khampha-content {
+    flex: 1;
+}
+
+.khampha-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+    
+
+.khampha-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+}
+.dia-phuong-section {
+    margin-top: 30px; /* Khoảng cách từ phần trước đó (Thông tin chính phủ) */
+    overflow: hidden; /* Đảm bảo nội dung không tràn ra */
+    padding-left: 15px; /* Thêm padding ngang để nội dung không dính sát lề */
+    padding-right: 15px;
+    position: relative; /* Quan trọng cho background map */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/World_map_blank_gmt.svg/1024px-World_map_blank_gmt.svg.png'); /* Replace with your actual map image */
+    background-size: 100% auto; /* Adjust as needed, 'cover' might also work */
+    background-position: center bottom; /* Position the map at the bottom center */
+    background-repeat: no-repeat;
+    background-color: #F5E8C7;
+    z-index: 0; /* Ensure it's behind other content */
+    width: 320px;
+}
+/* Header của phần Địa phương */
+.dia-phuong-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    position: relative; /* Cho icon vị trí */
+    z-index: 1; /* Đảm bảo header nằm trên background map */
+}
+/* Icon vị trí */
+.dia-phuong-icon {
+    width: 20px; /* Kích thước icon */
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;
+}
+
+.dia-phuong-icon a:hover{
+    color:aqua;
+}
+.dia-phuong-title a {
+    font-size: 1.25em; /* Kích thước chữ */
+    font-weight: bold;
+    color: #ff6b35; /* Màu cam */
+    text-transform: uppercase;
+    flex-grow: 1; /* Cho phép title chiếm hết không gian còn lại */
+}
+.dia-phuong-title a:hover{
+    color:blue;
+}
+
+/* Dropdown chọn địa phương */
+.dia-phuong-dropdown {
+    margin-bottom:30px;
+    position: relative;
+    z-index: 1; /* Đảm bảo dropdown nằm trên background map */
+}
+
+.dia-phuong-select {
+    padding: 5px 25px 5px 10px; /* Padding để text không dính sát và có chỗ cho mũi tên */
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bo tròn viền */
+    background-color: #fff;
+    font-size: 0.9em;
+    color: #333;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    cursor: pointer;
+    width:80%;
+}
+
+
+/* Danh sách các tin tức */
+.dia-phuong-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Khoảng cách giữa các item */
+    padding-bottom: 30px; /* Khoảng cách dưới cùng để không bị dính vào nút xem thêm */
+    z-index: 1; /* Đảm bảo list nằm trên background map */
+}
+
+/* Mỗi item tin tức */
+.dia-phuong-item {
+    display: flex;
+    align-items: center; /* Căn giữa dọc giữa ảnh và text */
+    gap: 15px; /* Khoảng cách giữa ảnh và text */
+    padding-bottom: 12px; /* Khoảng cách dưới mỗi item */
+    border-bottom: 1px dashed #eee; /* Đường gạch dưới nét đứt */
+    transition: all 0.2s ease;
+}
+
+    .dia-phuong-item:last-child {
+        border-bottom: none; /* Không có border dưới cho item cuối cùng */
+    }
+
+    .dia-phuong-item:hover .dia-phuong-item-title {
+        color: blue; 
+    }
+
+.dia-phuong-item-title {
+    font-size: 1em; /* Kích thước tiêu đề */
+    font-weight: 500; /* Không quá đậm */
+    color: #333;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Hiển thị tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dia-phuong-image-link {
+    flex-shrink: 0;
+}
+
+.dia-phuong-image {
+    width: 60px; /* Kích thước ảnh nhỏ */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px; /* Bo góc ảnh */
+    transition: transform 0.2s ease;
+}
+
+    .dia-phuong-image:hover {
+        transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+    }
+
+.dia-phuong-content {
+    flex: 1; /* Cho phép nội dung chiếm hết không gian còn lại */
+}
+.dia-phuong-meta {
+    display: flex;
+    align-items: center;
+    margin-top:5px; /* Khoảng cách từ tiêu đề đến meta */
+    font-size: 0.8em; /* Kích thước font nhỏ hơn cho meta */
+    color: #888;
+    gap:10px;
+}
+.dia-phuong-xem-them {
+    text-align: right; /* Căn phải như trong hình */
+    margin-top: 15px; /* Khoảng cách trên */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    z-index: 1; /* Đảm bảo nút nằm trên background map */
+}
+
+    .dia-phuong-xem-them a {
+        color: #ff6b35; /* Màu cam cho chữ "Xem thêm" */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9em;
+        transition: color 0.2s ease;
+    }
+
+        .dia-phuong-xem-them a:hover {
+            text-decoration: underline; /* Gạch chân khi hover */
+        }
+
+.video-section {
+    margin-top: 30px; /* Khoảng cách từ phần Địa phương */
+    padding-left: 15px; /* Padding ngang nhất quán với các phần khác */
+    padding-right: 15px;
+    margin-bottom: 20px; /* Khoảng cách dưới cùng của section */
+    width:330px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+   
+}
+    .header h2 {
+        color: deepskyblue;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        margin-right:10px;
+        white-space: nowrap;
+    }
+.header .hr-custom {
+    border: none;
+    border-top: 3px solid deepskyblue;
+    margin: 0;
+    height: 0;
+    margin-bottom: -10px;
+}
+.hr-150 {
+    width: 250px;
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các video item */
+}
+.video-item {
+    display: flex;
+    flex-direction: column; /* Thumbnail trên, tiêu đề và meta dưới */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Shadow nhẹ nhàng */
+    overflow: hidden; /* Đảm bảo thumbnail bo góc */
+   
+}
+.video-thumbnail:hover {
+    transform: translateY(-3px); /* Nâng nhẹ item lên khi hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Shadow rõ hơn khi hover */
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+.video-thumbnail-link {
+    display: block; /* Đảm bảo link bọc toàn bộ ảnh */
+    position: relative; /* Để định vị icon camera */
+    width: 100%; /* Chiếm toàn bộ chiều rộng của video-item */
+    height: 180px; /* Chiều cao cố định cho thumbnail, điều chỉnh theo ý muốn */
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra khỏi link */
+    border-top-left-radius: 8px; /* Bo góc trên khớp với item */
+    border-top-right-radius: 8px; /* Bo góc trên khớp với item */
+}
+
+.video-thumbnail {
+    width: 340px;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy và không bị méo */
+    display: block;
+    transition: transform 0.3s ease;
+}
+.video-camera-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 24px; /* Kích thước icon */
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen trong suốt */
+    border-radius: 4px; /* Bo góc nhẹ cho nền icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Sử dụng icon camera bằng Unicode hoặc Font Awesome */
+    content: '\1F4F9'; /* Mã unicode cho icon camera. Có thể không hiển thị trên mọi trình duyệt. */
+    font-family: 'Segoe UI Symbol', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; /* Font hỗ trợ emoji */
+    color: #fff;
+    font-size: 16px;
+    line-height: 1; /* Đảm bảo icon căn giữa */
+    
+}
+.video-title-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px 5px 0; /* Padding xung quanh tiêu đề */
+   display:block;
+}
+.video-title {
+    font-size: 1.1em;
+    font-weight: 600; /* Đậm hơn */
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+ 
+}
+
+.video-item:hover .video-title {
+    color: #00796b; /* Màu xanh ngọc khi hover */
+}
+
+.video-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Khoảng cách giữa các phần meta */
+    font-size: 0.85em;
+    color: #888;
+    padding: 0 15px 10px 0; /* Padding dưới cùng của meta */
+}
+
+    .video-meta .meta-icon {
+        width: 14px; /* Kích thước icon nhỏ */
+        height: 14px;
+        object-fit: contain;
+        vertical-align: middle; /* Căn giữa icon với text */
+        margin-right: 3px; /* Khoảng cách giữa icon và text */
+        /* Có thể thêm filter để đổi màu icon nếu nó là đen trắng */
+        filter: sepia(1) hue-rotate(180deg) saturate(3) brightness(0.7); /* Ví dụ để chuyển sang màu xanh đậm */
+    }
+.nong24h-section {
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+.nong24h-header {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+
+    .nong24h-header h2 {
+        color: #ff4500; /* Màu cam đậm cho tiêu đề */
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+    .nong24h-header .hr-custom {
+        border: none;
+        border-top: 3px solid #ff4500;
+        margin: 0;
+        height: 0;
+        margin-bottom: -10px;
+    }
+.hr-250 {
+    width: 200px;
+}
+.nong24h-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nong24h-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+    .nong24h-item:hover .nong24h-title {
+        color: blue;
+    }
+
+    
+
+.nong24h-image {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+    .nong24h-image:hover {
+        transform: scale(1.05);
+    }
+
+.nong24h-content {
+    flex: 1;
+}
+
+.nong24h-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    overflow: hidden;
+    
+}
+
+
+.nong24h-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .link .view:hover{
     color:blue;
 }
-.link .sidebar-view:hover {
-    color: blue;
-}
+
 
 .link{
     text-decoration:none;

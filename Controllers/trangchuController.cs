@@ -17,5 +17,17 @@ namespace Vnexpress.Controllers
         {
             return View();
         }
+        public ActionResult bongda()
+        {
+            return View();
+        }
+        public ActionResult hautruong()
+        {
+            return View();
+        }
+        public ActionResult Golf()
+        {
+            return View();
+        }
     }
 }
