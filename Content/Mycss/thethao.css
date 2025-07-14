@@ -345,21 +345,227 @@
     font-weight: bold;
     margin-left: 5px; /* Khoảng cách nhỏ giữa "THỂ THAO" và ">" */
 }
+.schedule-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px 340px;
+    display: flex;
+    gap: 0; /* Không có gap */
+    align-items:center;
+  
+}
+
+/* Các nút mũi tên */
+.nav-arrow {
+    background-color: rgba(0, 0, 0, 0.6); /* Nền nút hơi trong suốt */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Đảm bảo nút nằm trên lịch */
+    font-size: 24px;
+    line-height: 1; /* Để mũi tên được căn giữa */
+    border-radius: 50%; /* Bo tròn nút */
+    width: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.left-arrow {
+    position: relative; /* Sử dụng absolute để cố định vị trí */
+    flex-shrink: 0;
+    z-index: 10;
+    margin-right:-8px;
+}
+
+.right-arrow {
+    position: relative; /* Đổi lại thành relative */
+    flex-shrink: 0; /* Không co lại */
+    margin-left: -8px; /* Không margin */
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Mũi tên trái */
+.left-arrow::before {
+    content: '❮'; /* Ký tự mũi tên trái */
+}
+
+/* Mũi tên phải */
+.right-arrow::before {
+    content: '❯'; /* Ký tự mũi tên phải */
+}
+
+/* Điều chỉnh lại .lichthidaubongda-header để nó có thể cuộn và ẩn thanh cuộn */
+.lichthidaubongda-header {
+    display: flex;
+    gap: 0px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex-grow: 1;
+    margin: 0 10px; /* Tạo khoảng cách với 2 mũi tên */
+    max-width:85%;
+}
+
+    /* Ẩn thanh cuộn cho Webkit (Chrome, Safari) */
+    .lichthidaubongda-header::-webkit-scrollbar {
+        display: none;
+    }
+
+/* Các styles khác của bạn giữ nguyên */
+.ngaythangnam {
+    min-width: 100px;
+    background-color: #fdd835;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-sizing: border-box;
+}
+    .ngaythangnam .font {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .ngaythangnam .font-so {
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+.lichthidau {
+    min-width: 180px;
+    flex-shrink: 0;
+    border-left: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
+
+    .lichthidau:last-child {
+        border-right: none;
+    }
+
+.thoigian h4 {
+    background: #4a5568;
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    height: auto;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.match-item {
+    padding: 15px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 45px);
+    overflow: hidden;
+}
+
+    .match-item:hover {
+        background: #f7fafc;
+        transform: none;
+    }
+
+    .match-item:last-child {
+        border-bottom: none;
+    }
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    flex-grow: 1;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+    .team.away {
+        flex-direction: column;
+        text-align: center;
+    }
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #cbd5e0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.team-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2d3748;
+    line-height: 1.2;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e53e3e;
+    margin: 0 10px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.match-status {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    display: none;
+}
+.font-chu-thethao {
+    max-width: 1000px; /* Match the width of schedule-wrapper */
+    margin: 20px auto; /* Center it with consistent margin */
+    padding-left:40px;
+}
+
+.font-header {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: deepskyblue;
+    margin: 0; /* Remove default margins */
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-.link .view:hover {
+   .link .view:hover {
     color: blue;
 }
 

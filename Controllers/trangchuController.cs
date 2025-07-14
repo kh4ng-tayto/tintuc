@@ -29,5 +29,9 @@ namespace Vnexpress.Controllers
         {
             return View();
         }
+        public ActionResult congnhe()
+        {
+            return View();
+        }
     }
 }
