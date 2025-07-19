@@ -1,0 +1,66 @@
+﻿@model Vnexpress.Models.Article
+
+@{
+    ViewBag.Title = "Chi tiết bài viết";
+    Layout = "~/Views/Shared/trangchu.cshtml";
+}
+
+<link href="~/Content/Mycss/sqlDetails.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+
+<h2>Chi tiết bài viết</h2>
+
+<div class="article-details">
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <td data-label="Title">@Html.DisplayFor(Model => Model.Title)</td>
+        </tr>
+        <tr>
+            <th>Summary</th>
+            <td>@Html.DisplayFor(Model => Model.Summary)</td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td>@Html.Raw(Model.Content)</td>
+        </tr>
+        <tr>
+            <th>ImageUrl</th>
+            <td>
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" alt="@Model.Title" class="img-responsive" />
+                }
+                else
+                {
+                    <span>Không có ảnh</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>CreatedDate</th>
+            <td>
+                @(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToString("dd/MM/yyyy") : "N/A")
+            </td>
+        </tr>
+        <tr>
+            <th>CreatedTime</th>
+            <td>
+                @(Model.CreatedTime.HasValue ? Model.CreatedTime.Value.ToString(@"hh\:mm\:ss") : "N/A")
+            </td>
+        </tr>
+        <tr>
+            <th>CategoryId</th>
+            <td>@Html.DisplayFor(Model => Model.Category.Name)</td>
+        </tr>
+        <tr>
+            <th>UserId</th>
+            <td>@Html.DisplayFor(Model => Model.User.FullName)</td>
+        </tr>
+    </table>
+</div>
+
+<p class="action-buttons">
+    <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-edit"><i class="fas fa-edit"></i> Chỉnh sửa</a>
+    <a href="@Url.Action("Index")" class="btn btn-back"><i class="fas fa-arrow-left"></i> Quay lại</a>
+</p>

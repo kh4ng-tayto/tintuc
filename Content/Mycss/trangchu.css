@@ -24,6 +24,62 @@ header {
     /* Dùng font-size nhỏ cho các mục trên top-bar */
     line-height: 30px; /* Căn giữa text theo chiều dọc */
 }
+
+.top-bar-left {
+    flex: 1; /* Cho phép co giãn, để trống cho nội dung sau này */
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các liên kết */
+}
+
+    .top-bar-right span {
+        color: #ecf0f1; /* Màu xám nhạt cho chữ "Xin chào" */
+    }
+
+    .top-bar-right a {
+        color: #fff; /* Màu trắng cho liên kết */
+        text-decoration: none; /* Loại bỏ gạch chân mặc định */
+        padding: 2px 8px; /* Thêm padding cho liên kết */
+        border-radius: 3px; /* Góc bo tròn nhẹ */
+        transition: background-color 0.3s ease; /* Hiệu ứng hover mượt mà */
+    }
+
+        .top-bar-right a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Nền mờ khi hover */
+            color: #fff; /* Giữ màu trắng */
+        }
+
+        .top-bar-right a:active {
+            background-color: rgba(255, 255, 255, 0.3); /* Nền đậm hơn khi click */
+        }
+/* Responsive */
+@media (max-width: 768px) {
+    #top-bar {
+        flex-direction: column;
+        height: auto; /* Chiều cao tự động khi dọc */
+        padding: 10px; /* Giảm padding trên màn hình nhỏ */
+    }
+
+    .top-bar-left,
+    .top-bar-right {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .top-bar-right {
+        gap: 10px; /* Giảm khoảng cách giữa liên kết */
+    }
+
+        .top-bar-right a {
+            padding: 5px 10px; /* Tăng padding cho liên kết trên màn hình nhỏ */
+            display: block; /* Hiển thị từng liên kết trên dòng mới */
+        }
+}
+
 #main-header {
     width:100%;
     

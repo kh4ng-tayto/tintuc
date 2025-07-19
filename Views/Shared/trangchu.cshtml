@@ -11,8 +11,23 @@
        <header>
             <div id="top-bar">
                 <div class="top-bar-left">
+
                 </div>
                 <div class="top-bar-right">
+                    @{
+                        var username = Request.Cookies["Username"]?.Value;
+                    }
+
+                    @if (!string.IsNullOrEmpty(username))
+                    {
+                        <span>Xin chào, <strong>@username</strong> | <a href="/Account/Logout">Đăng xuất</a></span>
+                    }
+                    else
+                    {
+                <a href="/Account/Login" class="link-dangnhap">Đăng nhập</a>  
+               
+                <a href = "/Account/Register" > Đăng ký </a>
+                  }
                 </div>
             </div>
             <div id="main-header">
@@ -202,9 +217,10 @@
 
             </div>
         </header>
-    <div style="height:80%">
-        @RenderBody()
-    </div>
+       <div style="height:80%">
+           @RenderBody()
+           @RenderSection("scripts", required: false)
+       </div>
     <div class="footer">
         <div class="footer-top">
             <div class="footer-top-content">
