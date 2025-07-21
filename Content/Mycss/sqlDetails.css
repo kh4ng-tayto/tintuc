@@ -59,8 +59,8 @@ h2 {
     }
 
 .img-responsive {
-    max-width: 100%;
-    height: auto;
+    max-width:200px;
+    height:auto;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;

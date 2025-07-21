@@ -1,0 +1,90 @@
+﻿/* CSS cho view Create */
+.create-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+    .create-form .form-group {
+        margin-bottom: 15px;
+    }
+
+    .create-form .control-label {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .create-form .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .create-form .text-danger {
+        color: #e74c3c;
+        font-size: 13px;
+    }
+
+    .create-form .btn-create {
+        display: inline-block;
+        padding: 8px 15px;
+        text-decoration: none;
+        font-size: 14px;
+        margin-right: 10px;
+        background-color: #2ecc71;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+        .create-form .btn-create:hover {
+            background-color: #27ae60;
+            cursor:pointer;
+        }
+
+    .create-form .btn-back {
+        display: inline-block;
+        padding: 8px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        background-color: #7f8c8d;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+        .create-form .btn-back:hover {
+            background-color: #6d7273;
+        }
+    /* Thêm vào tệp SQLcreate.css */
+    .create-form .form-group select.form-control {
+        cursor: pointer;
+    }
+    .tao{
+        text-align:center;
+    }
+/* Thêm vào tệp SQLcreate.css */
+.create-form .image-preview {
+    margin-top: 10px;
+}
+
+.create-form .preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .create-form {
+        margin: 20px;
+        padding: 15px;
+    }
+}

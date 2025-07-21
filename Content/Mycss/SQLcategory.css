@@ -1,0 +1,95 @@
+﻿
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #2c3e50;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #3498db;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .table th {
+        background-color: #3498db;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        letter-spacing: 0.5px;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .table td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        vertical-align: middle;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background-color: #f1f7fd;
+        transition: background-color 0.3s ease;
+    }
+
+    .table a {
+        color: #2c3e50;
+        text-decoration: none;
+        margin: 0 5px;
+        font-weight: 500;
+    }
+
+        .table a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+/* Style cho nút "Create New" */
+p {
+    margin-bottom: 20px;
+}
+
+    .taomoi a {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #2ecc71;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .taomoi a:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+
+        .table th,
+        .table td {
+            min-width: 150px;
+        }
+}

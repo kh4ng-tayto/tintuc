@@ -131,12 +131,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\suckhoeController.cs" />
     <Compile Include="Controllers\trangchuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\TimeHelper.cs" />
     <Compile Include="Models\Article.cs">
       <DependentUpon>DBtintuc.tt</DependentUpon>
     </Compile>
@@ -187,9 +190,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Mycss\congnghe.css" />
+    <Content Include="Content\Mycss\SQLcategory.css" />
+    <Content Include="Content\Mycss\SQLcreate.css" />
+    <Content Include="Content\Mycss\SQLCreateCategory.css" />
     <Content Include="Content\Mycss\SqlDelete.css" />
+    <Content Include="Content\Mycss\SQLDeleteCategory.css" />
     <Content Include="Content\Mycss\sqlDetails.css" />
+    <Content Include="Content\Mycss\SQLDetailsCategory.css" />
     <Content Include="Content\Mycss\sqlEdit.css" />
+    <Content Include="Content\Mycss\SQLEditCategory.css" />
     <Content Include="Content\Mycss\sqltrangchinh.css" />
     <Content Include="Content\Mycss\suckhoe.css" />
     <Content Include="Content\Mycss\test.css" />
@@ -303,10 +312,21 @@
     <Content Include="Views\Articles\Delete.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Edit.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AccountController\" />
+    <Folder Include="Views\hienthigiodang\" />
+    <Folder Include="Views\TimeHelper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

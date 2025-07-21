@@ -1,0 +1,100 @@
+﻿/* Container chính */
+.delete-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề */
+.category-header {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+/* Đường kẻ ngang */
+.divider {
+    border-top: 2px solid #e9ecef;
+    margin: 20px 0;
+}
+
+/* Khung thông tin chi tiết */
+.category-details {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e8e8e8;
+}
+
+    .category-details dt {
+        font-weight: 600;
+        color: #34495e;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-left: 4px solid #3498db;
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+
+    .category-details dd {
+        background: #f8f9fa;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #2c3e50;
+        border: 1px solid #dee2e6;
+        margin-left: 0;
+    }
+
+/* Nút hành động */
+.action-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.delete-btn {
+    background-color: #dc3545 !important;
+    color: white !important;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+    .delete-btn:hover {
+        background-color: #bd2130 !important;
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+.back-link {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 8px 20px;
+    background-color: #6c757d;
+    color: white !important;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+    .back-link:hover {
+        background-color: #5a6268;
+        text-decoration: none;
+        transform: translateY(-2px);
+        
+    }

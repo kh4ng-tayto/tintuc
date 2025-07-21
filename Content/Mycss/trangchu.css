@@ -25,36 +25,6 @@ header {
     line-height: 30px; /* Căn giữa text theo chiều dọc */
 }
 
-.top-bar-left {
-    flex: 1; /* Cho phép co giãn, để trống cho nội dung sau này */
-}
-
-.top-bar-right {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Khoảng cách giữa các liên kết */
-}
-
-    .top-bar-right span {
-        color: #ecf0f1; /* Màu xám nhạt cho chữ "Xin chào" */
-    }
-
-    .top-bar-right a {
-        color: #fff; /* Màu trắng cho liên kết */
-        text-decoration: none; /* Loại bỏ gạch chân mặc định */
-        padding: 2px 8px; /* Thêm padding cho liên kết */
-        border-radius: 3px; /* Góc bo tròn nhẹ */
-        transition: background-color 0.3s ease; /* Hiệu ứng hover mượt mà */
-    }
-
-        .top-bar-right a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Nền mờ khi hover */
-            color: #fff; /* Giữ màu trắng */
-        }
-
-        .top-bar-right a:active {
-            background-color: rgba(255, 255, 255, 0.3); /* Nền đậm hơn khi click */
-        }
 /* Responsive */
 @media (max-width: 768px) {
     #top-bar {
@@ -99,6 +69,7 @@ header {
     display: flex;
     align-items: center;
     gap:15px;   
+    white-space:nowrap;
 }
 .header-upper-left .nav-item {
         text-decoration: none;
@@ -115,14 +86,46 @@ header {
         font-size: 14px;
         color: #333;
         font-weight: bold;
+        margin-right:20px;
     }
 
 .header-upper-right {
     display: flex;
+    width:80%;
     align-items: center;
     gap:15px;
     
 }
+    /* Điều chỉnh cho phần đăng nhập/đăng ký */
+    .header-upper-right .dangnhap,
+    .header-upper-right .dangki,
+    .header-upper-right .phandangxuat {
+        font-size: 14px;
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        white-space: nowrap; /* Ngăn chặn xuống dòng */
+        
+    }
+
+        .header-upper-right .dangnhap:hover,
+        .header-upper-right .dangki:hover {
+            color: #e44d26;
+        }
+
+    .header-upper-right .phandangxuat {
+        color: #2c3e50;
+    }
+
+        .header-upper-right .phandangxuat a {
+            color: #e74c3c;
+            margin-left: 5px;
+            text-decoration: none;
+        }
+
+            .header-upper-right .phandangxuat a:hover {
+                text-decoration: underline;
+            }
     .header-upper-right .link-partner {
         display: flex; /* Dùng flex để căn chỉnh các icon trong cùng một link */
         align-items: center;
@@ -193,45 +196,59 @@ header {
     margin-bottom:5px;
 }
 .search-bar {
-    display: flex;
-    align-items:center;
-    border: 1px solid #eee; /* Đường viền bao quanh toàn bộ khối */
-    border-radius: 3px;
-    overflow: hidden; /* Giúp các góc bo tròn hoạt động tốt */
-    background-color: white; /* Đảm bảo nền là màu trắng */
-    height:38px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
 }
+
+    .search-bar form {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #fff;
+        height: 38px;
+        transition: border-color 0.2s;
+    }
+
     .search-bar input {
         border: none;
-        padding: 8px 10px;
-        font-size: 0.9em;
+        padding: 0 12px;
+        font-size: 0.95em;
         outline: none;
         color: #333;
         flex-grow: 1;
         height: 100%;
-        padding-right: 30px;
         box-sizing: border-box;
     }
-    .search-bar a{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-decoration:none;
-        padding:0 10px;
-        color:black;
-        height:100%;
-        flex-shrink:0;
-        padding-right:40px;
+
+    .search-bar button {
+        border: none;
+        background: none;
+        padding: 0 14px;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
     }
-    .search-bar .search-icon{
-    font-size:15px;
+
+    .search-bar .search-icon {
+        font-size: 16px;
+        color: #666;
+        transition: color 0.2s;
     }
-    .search-bar .search-icon:hover{
-        color:red;
+
+    .search-bar button:hover .search-icon {
+        color: red;
     }
-    .search-bar:hover{
-        color:green;
+
+    .search-bar form:hover {
+        border-color: #4CAF50; /* Viền xanh khi hover */
     }
+
 
 
 

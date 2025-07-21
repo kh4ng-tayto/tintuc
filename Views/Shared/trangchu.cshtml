@@ -14,20 +14,7 @@
 
                 </div>
                 <div class="top-bar-right">
-                    @{
-                        var username = Request.Cookies["Username"]?.Value;
-                    }
-
-                    @if (!string.IsNullOrEmpty(username))
-                    {
-                        <span>Xin chào, <strong>@username</strong> | <a href="/Account/Logout">Đăng xuất</a></span>
-                    }
-                    else
-                    {
-                <a href="/Account/Login" class="link-dangnhap">Đăng nhập</a>  
-               
-                <a href = "/Account/Register" > Đăng ký </a>
-                  }
+                   
                 </div>
             </div>
             <div id="main-header">
@@ -51,6 +38,27 @@
                         <a href="https://chat.zalo.me/" class="link-partner" target="_blank">
                             <img src="~/hình/zalo.jpg" alt="Zalo" title="Zalo" class="social-icon" />
                         </a>
+                        @{
+                            var username = Request.Cookies["Username"]?.Value;
+                        }
+                        <a href="/Articles/Index">
+                            index của articles
+                        </a>
+
+                        @if (!string.IsNullOrEmpty(username))
+                        {
+                            <div class="phandangxuat">
+                                <h5>Xin chào, 
+                                <strong>@username</strong>
+                                <a href="/Account/Logout">Đăng xuất</a>
+                                </h5>
+                            </div>
+                        }
+                        else
+                        {
+                            <a href="/Account/Login" class="dangnhap">Đăng nhập</a>
+                            <a href="/Account/Register" class="dangki"> Đăng ký </a>
+                        }
                     </div>
                 </div>
                 <div class="header-main-content">
@@ -67,9 +75,12 @@
                     <div class="header-right">
                         <div class="datetime">Thứ Năm, 12/06/2025, 20:51:08 GMT+7</div>
                         <div class="search-bar">
-                            <input type="text" placeholder="Nhập từ khóa tìm kiếm">
-                            <a href="https://tienphong.vn/"><i class="fa fa-search search-icon"></i></a>
+                            <form action="/TrangChu/TimKiem" method="get">
+                                <input type="text" name="keyword" placeholder="Nhập từ khóa tìm kiếm" />
+                                <button type="submit"><i class="fa fa-search search-icon"></i></button>
+                            </form>
                         </div>
+
                     </div>
                 </div>
                 <div id="thanhmenu">

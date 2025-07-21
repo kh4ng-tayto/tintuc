@@ -4,78 +4,81 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/trangchu.cshtml";
 }
+<link href="~/Content/Mycss/SQLcreate.css" rel="stylesheet" />
+<h2>Tạo</h2>
 
-<h2>Create</h2>
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Articles", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Article</h4>
-    <hr />
+<div class="create-form">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.Id, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Summary, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Content, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImageUrl, "Hình ảnh", new { @class = "control-label" })
+        @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+        <div id="imagePreview" class="image-preview">
+            @if (!string.IsNullOrEmpty(Model?.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Hình ảnh" class="preview-image" />
+            }
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
-        </div>
+        @Html.LabelFor(model => model.CategoryId, "CategoryId", new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.CategoryId, (SelectList)ViewBag.CategoryId, "-- Chọn chuyên mục --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-        </div>
+        @Html.LabelFor(model => model.UserId, "UserId", new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.UserId, (SelectList)ViewBag.UserId, "-- Chọn tác giả --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    
-    <div class="form-group">
-        @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.CategoryId, (SelectList)ViewBag.CategoryId, "-- Chọn chuyên mục --", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.LabelFor(model => model.UserId)
-            @Html.DropDownListFor(model => model.UserId, (SelectList)ViewBag.UserId, "-- Chọn tác giả --")
-            @Html.ValidationMessageFor(model => model.UserId)
-
-
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
+        <input type="submit" value="Create" class="btn-create" />
+        @Html.ActionLink("Trở về", "Index", null, new { @class = "btn-back" })
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Trở về", "Index")
-</div>
-
+@section Scripts {
+    <script>
+        document.getElementById('imageFile').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.innerHTML = `<img src="${event.target.result}" alt="Hình ảnh xem trước" class="preview-image" />`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

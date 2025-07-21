@@ -1,0 +1,38 @@
+﻿@model Vnexpress.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/trangchu.cshtml";
+}
+<link href="~/Content/Mycss/SQLDeleteCategory.css" rel="stylesheet"/>
+<h2>Xóa</h2>
+<div class="delete-container">
+    <h4  class="category-header">Category</h4>
+    <dl class="category-details">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="action-buttons">
+            <input type="submit" value="Delete" class="btn delete-btn" />
+            @Html.ActionLink("Trở về", "Index", null, new { @class = "back-link" })
+        </div>
+    }
+</div>

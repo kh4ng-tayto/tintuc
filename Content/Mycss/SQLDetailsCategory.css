@@ -1,0 +1,170 @@
+﻿/* Category Details Page Styling */
+.details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.details-title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+/* Details List Styling */
+.details-dl {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e8e8e8;
+}
+
+    .details-dl dt {
+        font-weight: 600;
+        color: #34495e;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-left: 4px solid #3498db;
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+
+        .details-dl dt:first-child {
+            margin-top: 0;
+        }
+
+    .details-dl dd {
+        background: #f8f9fa;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #2c3e50;
+        border: 1px solid #dee2e6;
+        margin-left: 0;
+    }
+
+        .details-dl dd:last-child {
+            margin-bottom: 0;
+        }
+
+/* Action Links Container */
+.details-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+/* Base Link Styling */
+.edit-link, .back-link {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Link */
+.edit-link {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    color: white;
+}
+
+    .edit-link:hover {
+        background: linear-gradient(45deg, #e67e22, #d35400);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+
+/* Back Link */
+.back-link {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+    .back-link:hover {
+        background: linear-gradient(45deg, #7f8c8d, #6c7b7d);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details-container {
+        padding: 15px;
+    }
+
+    .details-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .details-dl {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+        .details-dl dt {
+            font-size: 1rem;
+        }
+
+        .details-dl dd {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+        }
+
+    .edit-link, .back-link {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .details-actions {
+        padding: 15px;
+    }
+}
+
+/* Animation for page load */
+.details-dl {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effects for the details container */
+.details-dl:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}

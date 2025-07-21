@@ -7,11 +7,12 @@
 <link href="~/Content/Mycss/sqltrangchinh.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
 
-<p>
+<p class="taomoi">
     @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
         <th>@Html.DisplayNameFor(model => model.Title)</th>
         <th>@Html.DisplayNameFor(model => model.Summary)</th>
         <th>@Html.DisplayNameFor(model => model.Content)</th>
@@ -26,10 +27,22 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
             <td>@Html.DisplayFor(modelItem => item.Title)</td>
             <td>@Html.DisplayFor(modelItem => item.Summary)</td>
             <td>@Html.DisplayFor(modelItem => item.Content)</td>
-            <td>@Html.DisplayFor(modelItem => item.ImageUrl)</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="@Url.Content(item.ImageUrl)" alt="@item.Title" style="max-width: 100px; max-height: 100px;" />
+                }
+                else
+                {
+                    <span>Không có hình ảnh</span>
+                }
+            </td>
+
+
             <td>
                 @(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "")
             </td>
@@ -40,8 +53,8 @@
             <td>@Html.DisplayFor(modelItem => item.CategoryId)</td>
             <td>@Html.DisplayFor(modelItem => item.UserId)</td>
             <td>
-                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Id }) 
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) 
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Id })
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Id })
                 @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
             </td>
         </tr>

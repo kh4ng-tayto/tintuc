@@ -1,0 +1,31 @@
+﻿@model Vnexpress.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/trangchu.cshtml";
+}
+
+<link href="~/Content/Mycss/SQLDetailsCategory.css" rel="stylesheet" />
+
+<div class="details-container">
+    <h2 class="details-title">Details</h2>
+    <dl class="details-dl">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<p class="details-actions">
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id }, new { @class = "edit-link" })
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "back-link" })
+</p>

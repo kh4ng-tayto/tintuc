@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,26 +30,46 @@ namespace Vnexpress.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Article article)
+        public ActionResult Create(Article article, HttpPostedFileBase imageFile)
         {
-            var culture = new System.Globalization.CultureInfo("vi-VN");
-            System.Threading.Thread.CurrentThread.CurrentCulture = culture;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
-
-            var categories = db.Categories.Select(c => new { c.Id, c.Name }).ToList();
-            var users = db.Users.Select(u => new { u.Id, u.FullName }).ToList();
-
             if (ModelState.IsValid)
             {
-                article.CreatedDate = DateTime.Now.Date;
-                article.CreatedTime = DateTime.Now.TimeOfDay;
-                db.Articles.Add(article);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    if (imageFile != null && imageFile.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(imageFile.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+                        imageFile.SaveAs(path);
+                        article.ImageUrl = "/Uploads/" + fileName;
+                    }
+
+                    // Gán ngày giờ tạo bài viết
+                    article.CreatedDate = DateTime.Now.Date;
+                    article.CreatedTime = DateTime.Now.TimeOfDay;
+
+                    db.Articles.Add(article);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    // Ghi lại lỗi xác thực
+                    var errorMessages = ex.EntityValidationErrors
+                        .SelectMany(x => x.ValidationErrors)
+                        .Select(x => x.ErrorMessage);
+                    var fullErrorMessage = string.Join("; ", errorMessages);
+                    ModelState.AddModelError("", $"Lỗi khi lưu bài viết: {fullErrorMessage}");
+                }
+                catch (Exception ex)
+                {
+                    // Ghi lại lỗi chung
+                    ModelState.AddModelError("", $"Lỗi khi lưu bài viết: {ex.Message}");
+                }
             }
 
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name", article.CategoryId);
-            ViewBag.UserId = new SelectList(users, "Id", "FullName", article.UserId);
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", article.CategoryId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "FullName", article.UserId);
             return View(article);
         }
         public ActionResult Delete(int? id)
@@ -100,50 +121,41 @@ namespace Vnexpress.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Article article)
+        public ActionResult Edit(Article model)
         {
-            var categories = db.Categories.Select(c => new { c.Id, c.Name }).ToList();
-            var users = db.Users.Select(u => new { u.Id, u.FullName }).ToList();
-
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    var existingArticle = db.Articles.AsNoTracking().FirstOrDefault(a => a.Id == article.Id);
-                    if (existingArticle != null)
-                    {
-                        // Giữ nguyên ngày tạo ban đầu
-                        article.CreatedDate = existingArticle.CreatedDate;
-                        article.CreatedTime = existingArticle.CreatedTime;
-
-                        // Cập nhật ngày giờ chỉnh sửa
-                        article.UpdatedDate = DateTime.Now.Date;
-                        article.UpdatedTime = DateTime.Now.TimeOfDay;
-                    }
-
-                    db.Entry(article).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                catch (DbEntityValidationException ex)
-                {
-                    foreach (var error in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in error.ValidationErrors)
-                        {
-                            ModelState.AddModelError("", $"Thuộc tính: {validationError.PropertyName}, Lỗi: {validationError.ErrorMessage}");
-                        }
-                    }
-                    ViewBag.CategoryId = new SelectList(categories, "Id", "Name", article.CategoryId);
-                    ViewBag.UserId = new SelectList(users, "Id", "FullName", article.UserId);
-                    return View(article);
-                }
+                // Nếu model có lỗi, load lại dropdowns và return view
+                ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", model.CategoryId);
+                ViewBag.UserId = new SelectList(db.Users, "Id", "FullName", model.UserId);
+                return View(model);
             }
 
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name", article.CategoryId);
-            ViewBag.UserId = new SelectList(users, "Id", "FullName", article.UserId);
-            return View(article);
+            var articleToUpdate = db.Articles.Find(model.Id);
+            if (articleToUpdate == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Cập nhật các trường người dùng được chỉnh sửa
+            articleToUpdate.Title = model.Title;
+            articleToUpdate.Summary = model.Summary;
+            articleToUpdate.Content = model.Content;
+            articleToUpdate.ImageUrl = model.ImageUrl;
+            articleToUpdate.CategoryId = model.CategoryId;
+            articleToUpdate.UserId = model.UserId;
+
+
+            // Gán ngày giờ hiện tại vào trường chỉnh sửa
+            articleToUpdate.CreatedDate = DateTime.Now.Date;
+            articleToUpdate.CreatedTime = DateTime.Now.TimeOfDay;
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
+
+
         // GET: Articles/Details/5
         public ActionResult Details(int? id)
         {
@@ -158,6 +170,8 @@ namespace Vnexpress.Controllers
             }
             return View(article);
         }
+        
+
 
         protected override void Dispose(bool disposing)
         {

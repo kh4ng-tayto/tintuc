@@ -1,22 +1,46 @@
-﻿
+﻿@model IEnumerable<Vnexpress.Models.Article>
+@using Vnexpress.Helpers;
+
 @{
     ViewBag.Title = "trangchu";
     Layout = "~/Views/Shared/trangchu.cshtml";
 }
 <link href="~/Content/Mycss/thancuatrangchu.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
 <div class="container">
     <div class="baochinh">
         <div class="main-article">
-            <a href="#" ><img src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bộ GD-ĐT họp bàn" class="hinhchinh"></a>
-            <div class="article-content">
-                <a href="#" class="link"><h1 class="article-title">Bộ GD-ĐT: Xử lý nghiêm việc xuất hiện thông tin lọt đề thi tốt nghiệp THPT</h1></a>
-                <div class="article-meta">
-                    <a href="#"><span class="source"><img src="~/hình/znew.png" class="icon"/></span></a>
-                    <span class="time">1 giờ</span>
-                    <a href="#" class="link"><span class="view">2568 lần quan</span></a>
+            @foreach (var item in Model.Skip(1))
+            {
+                
+
+                <a href="@Url.Action("Details", "Articles", new { id = item.Id })">
+                    <img src="@Url.Content(item.ImageUrl)" alt="@item.Title" class="hinhchinh" />
+                </a>
+                <div class="article-content">
+                    <a href="@Url.Action("Details", "Articles", new { id = item.Id })" class="link">
+                        <h1 class="article-title">@item.Title</h1>
+                    </a>
+                    <div class="article-meta">
+                        <a href="#"><span class="source"><img src="~/hình/znew.png" class="icon" /></span></a>
+                        <span class="time">@(item.CreatedDate?.ToString("dd/MM/yyyy"))</span>
+                        <a href="#" class="link"><span class="view">2568 lượt xem</span></a>
+                        <small>@TimeHelper.GetTimeAgo(@item.CreatedDate, item.CreatedTime)</small>
+                    </div>
                 </div>
-            </div>
+            }
+
+            @foreach (var item in Model.Skip(1))
+            {
+                <div class="baiviet">
+                    <h3>@item.Title</h3>
+                    <p>@item.Summary</p>
+                    <img src="@Url.Content(item.ImageUrl)" alt="@item.Title" style="max-width: 100px; max-height: 100px;" />
+                    <small>Ngày đăng: @item.CreatedDate?.ToString("dd/MM/yyyy")</small>
+                    <small>Giờ đăng: @item.CreatedTime?.ToString("hh\:mm\:ss")</small>
+                    <small>@TimeHelper.GetTimeAgo(@item.CreatedDate, item.CreatedTime)</small>
+                </div>
+            }
         </div>
         <div class="tinlienquan">
             <div class="bacot">
@@ -168,7 +192,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="khampha-section">
                 <div class="khampha-header">
                     KHÁM PHÁ VIỆT NAM
@@ -391,12 +415,12 @@
                         <a href="#" class="link">
                             <div class="dia-phuong-item-title">Thế mạnh mới của TP HCM</div>
                         </a>
-                    <div class="dia-phuong-meta">
-                        <a href="#"><span class="source"><img src="~/hình/vtcnew.png" class="icon" /></span></a>
-                        <span class="time">3 giờ</span>
-                        <a href="#" class="link"><span class="view">1033 liên quan</span></a>
+                        <div class="dia-phuong-meta">
+                            <a href="#"><span class="source"><img src="~/hình/vtcnew.png" class="icon" /></span></a>
+                            <span class="time">3 giờ</span>
+                            <a href="#" class="link"><span class="view">1033 liên quan</span></a>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="dia-phuong-item">
@@ -531,7 +555,7 @@
                         <a href="#" class="link"><div class="nong24h-title">Clip: Tài xế lái xe bấm, camera hành trình ghi lại cảnh run sợ</div></a>
                         <div class="nong24h-meta">
                             <a href="#"><span class="source"><img src="~/hình/tintuc.png" class="icon" /></span></a>
-                           
+
                             <a href="#" class="link"><span class="view">2568 liên quan</span></a>
                         </div>
                     </div>
@@ -600,5 +624,6 @@
         </div>
     </div>
 </div>
+
 
 
